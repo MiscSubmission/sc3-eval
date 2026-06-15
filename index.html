@@ -8,7 +8,7 @@
       content="Project page for SC3-Eval: Evaluating Robot Foundation Models via Self-Consistent Video Generation."
     >
     <title>SC3-Eval | Project Page</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20260615-outcomes">
   </head>
   <body>
     <header class="site-hero">
@@ -42,7 +42,7 @@
         <figure class="teaser-figure">
           <img
             class="teaser-image"
-            src="assets/teaser_v4.png"
+            src="assets/teaser_v6.png"
             alt="SC3-Eval consistency axes for forward-inverse dynamics, multi-view prediction, and test-time rollout termination"
           >
           <figcaption>
@@ -134,11 +134,26 @@
         </div>
         <div class="rollout-groups" aria-label="Policy evaluation rollout videos">
           <div class="rollout-group">
-            <h3>Pick up yellow cup and put it in bin</h3>
+            <h3>Pick up white bowl and put it in the blue trash can</h3>
             <div class="video-grid">
               <figure class="video-card combined-video-card">
+                <table class="outcome-table" aria-label="White bowl rollout outcome annotations">
+                  <thead>
+                    <tr>
+                      <th>Rollout</th>
+                      <th>Language following</th>
+                      <th>Object lifting</th>
+                      <th>Object placing</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="outcome-row real-world"><th>GT</th><td class="is-pass">v</td><td class="is-pass">v</td><td class="is-fail">x</td></tr>
+                    <tr class="outcome-row offline-model"><th>Offline</th><td class="is-pass">v</td><td class="is-pass">v</td><td class="is-fail">x</td></tr>
+                    <tr class="outcome-row online-model"><th>Online</th><td class="is-pass">v</td><td class="is-pass">v</td><td class="is-fail">x</td></tr>
+                  </tbody>
+                </table>
                 <video controls preload="metadata">
-                  <source src="assets/rollouts_combined/pick_up_yellow_cup_and_put_it_in_bin.mp4" type="video/mp4">
+                  <source src="assets/rollouts_combined/pick_up_white_bowl_and_put_white_bowl_in_the_blue_trash_can.mp4" type="video/mp4">
                 </video>
               </figure>
             </div>
@@ -147,6 +162,21 @@
             <h3>Pick up spoon and put it in the blue trash can</h3>
             <div class="video-grid">
               <figure class="video-card combined-video-card">
+                <table class="outcome-table" aria-label="Spoon rollout outcome annotations">
+                  <thead>
+                    <tr>
+                      <th>Rollout</th>
+                      <th>Language following</th>
+                      <th>Object lifting</th>
+                      <th>Object placing</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="outcome-row real-world"><th>GT</th><td class="is-pass">v</td><td class="is-fail">x</td><td class="is-fail">x</td></tr>
+                    <tr class="outcome-row offline-model"><th>Offline</th><td class="is-pass">v</td><td class="is-fail">x</td><td class="is-fail">x</td></tr>
+                    <tr class="outcome-row online-model"><th>Online</th><td class="is-pass">v</td><td class="is-fail">x</td><td class="is-fail">x</td></tr>
+                  </tbody>
+                </table>
                 <video controls preload="metadata">
                   <source src="assets/rollouts_combined/pick_up_spoon_and_put_spoon_in_the_blue_trash_can.mp4" type="video/mp4">
                 </video>
@@ -154,11 +184,26 @@
             </div>
           </div>
           <div class="rollout-group">
-            <h3>Pick up chopstick and put it in the blue trash can</h3>
+            <h3>Pick up plastic container and throw it away</h3>
             <div class="video-grid">
               <figure class="video-card combined-video-card">
+                <table class="outcome-table" aria-label="Plastic container rollout outcome annotations">
+                  <thead>
+                    <tr>
+                      <th>Rollout</th>
+                      <th>Language following</th>
+                      <th>Object lifting</th>
+                      <th>Object placing</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="outcome-row real-world"><th>GT</th><td class="is-pass">v</td><td class="is-pass">v</td><td class="is-pass">v</td></tr>
+                    <tr class="outcome-row offline-model"><th>Offline</th><td class="is-pass">v</td><td class="is-pass">v</td><td class="is-pass">v</td></tr>
+                    <tr class="outcome-row online-model"><th>Online</th><td class="is-pass">v</td><td class="is-pass">v</td><td class="is-pass">v</td></tr>
+                  </tbody>
+                </table>
                 <video controls preload="metadata">
-                  <source src="assets/rollouts_combined/pick_up_chopstick_and_put_chopstick_in_the_blue_trash_can.mp4" type="video/mp4">
+                  <source src="assets/rollouts_combined/pick_up_plastic_container_and_throw_it_away.mp4" type="video/mp4">
                 </video>
               </figure>
             </div>
@@ -167,6 +212,21 @@
             <h3>Pick up foil tray and throw it away</h3>
             <div class="video-grid">
               <figure class="video-card combined-video-card">
+                <table class="outcome-table" aria-label="Foil tray rollout outcome annotations">
+                  <thead>
+                    <tr>
+                      <th>Rollout</th>
+                      <th>Language following</th>
+                      <th>Object lifting</th>
+                      <th>Object placing</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="outcome-row real-world"><th>GT</th><td class="is-pass">v</td><td class="is-pass">v</td><td class="is-pass">v</td></tr>
+                    <tr class="outcome-row offline-model"><th>Offline</th><td class="is-pass">v</td><td class="is-pass">v</td><td class="is-pass">v</td></tr>
+                    <tr class="outcome-row online-model"><th>Online</th><td class="is-pass">v</td><td class="is-pass">v</td><td class="is-pass">v</td></tr>
+                  </tbody>
+                </table>
                 <video controls preload="metadata">
                   <source src="assets/rollouts_combined/pick_up_foil_tray_and_throw_it_away.mp4" type="video/mp4">
                 </video>
@@ -187,24 +247,24 @@
             <h3>Cross-View Consistency</h3>
             <p>
               We compare online world model rollouts with and without
-              cross-view reference mode. When the robot moves outside of the
+              cross-view inpainting mode. When the robot moves outside of the
               workspace and returns, cross-view consistency helps the model
               better recover the scene within the workspace for the wrist
               camera.
             </p>
             <div class="ablation-video-card">
-              <div class="comparison-video-grid" aria-label="Cross-view reference mode ablation videos">
+              <div class="comparison-video-grid" aria-label="Cross-view inpainting mode ablation videos">
                 <figure>
                   <video controls preload="metadata">
                     <source src="assets/ablation_cvr/2026-04-01-204936Z-ur5e_single_4-2f1aa8e29d1f__eval_17724__apr8_oct14_pretrain_80000__pick_up_bottle_and_put_bottle_in_the_clear_bussing_bin_to_the_left_wo_cvi.mp4" type="video/mp4">
                   </video>
-                  <figcaption>w/o CVR</figcaption>
+                  <figcaption><strong>w/o</strong> cross-view inpainting</figcaption>
                 </figure>
                 <figure>
                   <video controls preload="metadata">
                     <source src="assets/ablation_cvr/2026-04-01-204936Z-ur5e_single_4-2f1aa8e29d1f__eval_17724__apr8_oct14_pretrain_80000__pick_up_bottle_and_put_bottle_in_the_clear_bussing_bin_to_the_left_w_cvi.mp4" type="video/mp4">
                   </video>
-                  <figcaption>w/ CVR</figcaption>
+                  <figcaption><strong>w/</strong> cross-view inpainting</figcaption>
                 </figure>
               </div>
             </div>
