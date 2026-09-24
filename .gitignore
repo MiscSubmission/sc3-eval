@@ -11,3 +11,5 @@ assets/uncertainty/uncertainty_paper_figure.*
 make_uncertainty_figure.py
 scripts/
 .DS_Store
+
+ori/

@@ -8,241 +8,173 @@
       content="Project page for SC3-Eval: Evaluating Robot Foundation Models via Self-Consistent Video Generation."
     >
     <title>SC3-Eval | Project Page</title>
-    <link rel="stylesheet" href="styles.css?v=20260615-outcomes">
+    <link rel="stylesheet" href="styles.css?v=20260924-ur5-soon">
   </head>
   <body>
     <header class="site-hero">
       <nav class="top-nav" aria-label="Page sections">
-        <a href="#abstract">Abstract</a>
+        <a href="#rollout-demo">Demos</a>
         <a href="#results">Results</a>
         <a href="#ablation-study">Ablations</a>
       </nav>
 
       <div class="container hero-content">
-        <p class="eyebrow">CoRL Submission 2026</p>
+        <p class="eyebrow">ICRA 2027 Submission</p>
         <h1>
           <span class="title-prefix">SC3-Eval</span>
           <span class="title-main">Evaluating Robot Foundation Models via Self-Consistent Video Generation</span>
         </h1>
-        <p class="subtitle">
-          A self-consistent video generation recipe that adapts pre-trained robot video foundation models into faithful closed-loop policy evaluators.
-        </p>
 
       </div>
     </header>
 
     <main>
-      <section class="container teaser-section" aria-labelledby="teaser-title">
-        <h2 id="teaser-title">Self-Consistent Video Generation</h2>
-        <p>
-          SC3-Eval enforces forward-inverse dynamics consistency, multi-view
-          consistency, and test-time consistency to keep imagined policy rollouts
-          faithful over long horizons.
-        </p>
+      <section class="container teaser-section" aria-label="Overview">
         <figure class="teaser-figure">
           <img
             class="teaser-image"
-            src="assets/teaser_v6.png"
-            alt="SC3-Eval consistency axes for forward-inverse dynamics, multi-view prediction, and test-time rollout termination"
+            src="assets/overview_v9.png"
+            alt="Overview of SC3-Eval: closed-loop policy evaluation in a multi-view world model with inverse-dynamics uncertainty for early termination"
           >
           <figcaption>
-            The three consistency axes of SC3-Eval: forward-inverse dynamics
-            consistency reduces rollout drift, multi-view consistency keeps
-            camera views coherent, and test-time consistency terminates
-            off-manifold generations.
+            <strong>Overview of SC3-Eval.</strong> A generalist policy is
+            evaluated in closed loop within a world model that generates
+            multi-view observations conditioned on the policy's predicted
+            action chunks. These observations are fed back to the policy to
+            predict subsequent actions. The same world model also recovers
+            action chunks from the generated observations through its inverse
+            dynamics mode. The discrepancy between the predicted and recovered
+            actions provides an uncertainty score for each chunk, enabling
+            early termination of unreliable rollouts.
           </figcaption>
         </figure>
       </section>
 
-      <section class="container section" id="abstract" aria-labelledby="abstract-title">
-        <h2 id="abstract-title">Abstract</h2>
+      <section class="container section" id="rollout-demo" aria-labelledby="rollout-demo-title">
+        <h2 id="rollout-demo-title">Interactive Rollouts</h2>
         <p>
-          Evaluating generalist robot manipulation policies in the real world is
-          expensive, slow, and difficult to scale. Action-conditioned video
-          world models offer a scalable alternative by simulating policy
-          rollouts. Autoregressive rollouts accumulate compounding errors,
-          observations across multiple camera views must remain mutually
-          consistent, and the evaluator must generalize to policies whose
-          behaviors lie outside the training distribution. We address these
-          challenges with SC3-Eval, a self-consistent video generation recipe
-          that adapts a pre-trained video foundation model into an accurate
-          policy evaluator by enforcing three complementary forms of
-          consistency: forward-inverse dynamics consistency, cross-view
-          consistency, and test-time consistency. Across seven real-world
-          vision-language-action policies, SC3-Eval attains a closed-loop
-          Pearson correlation of 0.929 and MMRV of 0.119, outperforming prior
-          video-model-based baselines and generalizing to new tasks.
+          Select an embodiment and task to compare a real-world rollout with
+          the corresponding world-model rollout.
         </p>
+        <form class="demo-controls" id="demo-controls">
+          <fieldset class="demo-field">
+            <legend>Embodiment</legend>
+            <div class="demo-pills" role="radiogroup" aria-label="Embodiment">
+              <label>
+                <input type="radio" name="embodiment" value="UR5" disabled>
+                <span>UR5 (coming soon)</span>
+              </label>
+              <label>
+                <input type="radio" name="embodiment" value="YAM" checked>
+                <span>YAM</span>
+              </label>
+            </div>
+          </fieldset>
+          <label class="demo-field">
+            <span>Task</span>
+            <select id="demo-task" name="task"></select>
+          </label>
+          <label class="demo-field" id="demo-policy-field">
+            <span>Policy</span>
+            <select id="demo-policy" name="policy"></select>
+          </label>
+        </form>
+        <div class="demo-stage" id="demo-stage">
+          <p class="demo-empty">Select a combination to view rollouts.</p>
+        </div>
       </section>
 
       <section class="container section" id="results" aria-labelledby="policy-evaluation-title">
         <h2 id="policy-evaluation-title">Policy Evaluation Results</h2>
-        <p>
-          SC3-Eval tracks real-world policy success rates across
-          in-distribution and out-of-distribution table bussing tasks, including
-          fine-grained success criteria.
-        </p>
         <h3>Evaluation Setup</h3>
         <p>
-          We evaluate table bussing with synchronized external and wrist camera
-          views, and score each trajectory using three criteria: language
-          following, object lifting, and object placing.
+          We evaluate policies on UR5 table-bussing and YAM object-picking,
+          using synchronized multi-view observations as inputs to both the
+          policies and the world model.
         </p>
         <figure>
           <img
             class="section-image"
-            src="assets/exp_setup_v3.png"
-            alt="Real-world table bussing setup with forward and reverse task arrows, three camera views, and three success criteria"
+            src="assets/setup_v4.png"
+            alt="Real-world evaluation setups on UR5 and YAM, showing the table-bussing workspace with two third-person cameras and a wrist camera, and the YAM object-picking workspace with an egocentric view and left and right wrist cameras"
           >
-          <figcaption>
-            (a) Real-world experiment setup and table bussing task variants.
-            (b) Three synchronized camera views observed by the policy and
-            world model. (c) Example frames for the three success criteria:
-            language following, object lifting, and object placing.
-          </figcaption>
         </figure>
         <hr></hr>
-        <h3>Correlation With Real-World Performance</h3>
+        <h3>Closed-loop Policy Evaluation Correlation Graph</h3>
         <p>
-          The correlation plots compare predicted success rates against
-          real-world success rates. The left two panels evaluate offline
-          open-loop rollouts, where the world model is conditioned on the
-          real-world action sequence. The right two panels evaluate online
-          closed-loop rollouts, where the policy acts on generated frames. Each
-          mode is split into the in-distribution table bussing task and an
-          out-of-distribution reverse table bussing task, which keeps the same
-          scene and motion primitives but swaps object destinations.
+          Predictions from SC3-Eval align more closely
+          with the ideal <em>y</em>&nbsp;=&nbsp;<em>x</em> line, particularly
+          for object lifting on both platforms and object placing on UR5.
         </p>
-        <figure>
+        <figure class="correlation-figure">
+          <div class="correlation-group-labels">
+            <p>Policy Evaluation Correlation on UR5</p>
+            <p>Policy Evaluation Correlation on YAM</p>
+          </div>
           <img
             class="section-image"
-            src="assets/corr_v3.png"
-            alt="Policy evaluation correlation between predicted and ground-truth success rates"
+            src="assets/separate_correlation.png"
+            alt="Closed-loop policy evaluation correlation. Left three subplots: Policy Evaluation Correlation on UR5. Right two subplots: Policy Evaluation Correlation on YAM."
           >
-          <figcaption>
-            Each point is a policy-checkpoint and success-criterion pair.
-            SC3-Eval maintains strong agreement with real-world policy
-            performance across in-distribution and out-of-distribution tasks,
-            and across offline and online evaluation.
-          </figcaption>
         </figure>
-        <hr></hr>
-        <div class="rollout-legend" aria-label="Rollout boundary color legend">
-          <span><i class="legend-swatch real-world"></i>Real-world rollout</span>
-          <span><i class="legend-swatch offline-model"></i>Offline world model rollout</span>
-          <span><i class="legend-swatch online-model"></i>Online world model rollout</span>
+      </section>
+
+      <section class="container section" id="uncertainty-estimation" aria-labelledby="uncertainty-estimation-title">
+        <h2 id="uncertainty-estimation-title">Uncertainty Visualization</h2>
+        <p>
+          Inverse-dynamics uncertainty acts as a test-time consistency signal
+          for terminating unreliable imagined rollouts.
+        </p>
+        <div class="ablation-video-card">
+          <p class="prompt-label">
+            Prompt: pick up blue bowl and put it in bin
+          </p>
+          <figure>
+            <video class="uncertainty-video" controls preload="metadata">
+              <source src="assets/uncertainty/2026-04-02-084739Z-ur5e_single_4-5168577acfce__eval_17725__apr8_episode_buckets_120000__pick_up_blue_bowl_and_put_it_in_bin_bottomrow.mp4" type="video/mp4">
+            </video>
+          </figure>
+          <div
+            class="uncertainty-chart"
+            data-src="assets/uncertainty/2026-04-02-084739Z-ur5e_single_4-5168577acfce__eval_17725__apr8_episode_buckets_120000__pick_up_blue_bowl_and_put_it_in_bin_bottomrow_uncertainty.json"
+            aria-label="Uncertainty values over rollout chunks"
+          >
+            <p>Loading uncertainty visualization...</p>
+          </div>
         </div>
-        <div class="rollout-groups" aria-label="Policy evaluation rollout videos">
-          <div class="rollout-group">
-            <h3>Pick up white bowl and put it in the blue trash can</h3>
-            <div class="video-grid">
-              <figure class="video-card combined-video-card">
-                <table class="outcome-table" aria-label="White bowl rollout outcome annotations">
-                  <thead>
-                    <tr>
-                      <th>Rollout</th>
-                      <th>Language following</th>
-                      <th>Object lifting</th>
-                      <th>Object placing</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="outcome-row real-world"><th>GT</th><td class="is-pass">v</td><td class="is-pass">v</td><td class="is-fail">x</td></tr>
-                    <tr class="outcome-row offline-model"><th>Offline</th><td class="is-pass">v</td><td class="is-pass">v</td><td class="is-fail">x</td></tr>
-                    <tr class="outcome-row online-model"><th>Online</th><td class="is-pass">v</td><td class="is-pass">v</td><td class="is-fail">x</td></tr>
-                  </tbody>
-                </table>
-                <video controls preload="metadata">
-                  <source src="assets/rollouts_combined/pick_up_white_bowl_and_put_white_bowl_in_the_blue_trash_can.mp4" type="video/mp4">
-                </video>
-              </figure>
-            </div>
-          </div>
-          <div class="rollout-group">
-            <h3>Pick up spoon and put it in the blue trash can</h3>
-            <div class="video-grid">
-              <figure class="video-card combined-video-card">
-                <table class="outcome-table" aria-label="Spoon rollout outcome annotations">
-                  <thead>
-                    <tr>
-                      <th>Rollout</th>
-                      <th>Language following</th>
-                      <th>Object lifting</th>
-                      <th>Object placing</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="outcome-row real-world"><th>GT</th><td class="is-pass">v</td><td class="is-fail">x</td><td class="is-fail">x</td></tr>
-                    <tr class="outcome-row offline-model"><th>Offline</th><td class="is-pass">v</td><td class="is-fail">x</td><td class="is-fail">x</td></tr>
-                    <tr class="outcome-row online-model"><th>Online</th><td class="is-pass">v</td><td class="is-fail">x</td><td class="is-fail">x</td></tr>
-                  </tbody>
-                </table>
-                <video controls preload="metadata">
-                  <source src="assets/rollouts_combined/pick_up_spoon_and_put_spoon_in_the_blue_trash_can.mp4" type="video/mp4">
-                </video>
-              </figure>
-            </div>
-          </div>
-          <div class="rollout-group">
-            <h3>Pick up plastic container and throw it away</h3>
-            <div class="video-grid">
-              <figure class="video-card combined-video-card">
-                <table class="outcome-table" aria-label="Plastic container rollout outcome annotations">
-                  <thead>
-                    <tr>
-                      <th>Rollout</th>
-                      <th>Language following</th>
-                      <th>Object lifting</th>
-                      <th>Object placing</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="outcome-row real-world"><th>GT</th><td class="is-pass">v</td><td class="is-pass">v</td><td class="is-pass">v</td></tr>
-                    <tr class="outcome-row offline-model"><th>Offline</th><td class="is-pass">v</td><td class="is-pass">v</td><td class="is-pass">v</td></tr>
-                    <tr class="outcome-row online-model"><th>Online</th><td class="is-pass">v</td><td class="is-pass">v</td><td class="is-pass">v</td></tr>
-                  </tbody>
-                </table>
-                <video controls preload="metadata">
-                  <source src="assets/rollouts_combined/pick_up_plastic_container_and_throw_it_away.mp4" type="video/mp4">
-                </video>
-              </figure>
-            </div>
-          </div>
-          <div class="rollout-group">
-            <h3>Pick up foil tray and throw it away</h3>
-            <div class="video-grid">
-              <figure class="video-card combined-video-card">
-                <table class="outcome-table" aria-label="Foil tray rollout outcome annotations">
-                  <thead>
-                    <tr>
-                      <th>Rollout</th>
-                      <th>Language following</th>
-                      <th>Object lifting</th>
-                      <th>Object placing</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="outcome-row real-world"><th>GT</th><td class="is-pass">v</td><td class="is-pass">v</td><td class="is-pass">v</td></tr>
-                    <tr class="outcome-row offline-model"><th>Offline</th><td class="is-pass">v</td><td class="is-pass">v</td><td class="is-pass">v</td></tr>
-                    <tr class="outcome-row online-model"><th>Online</th><td class="is-pass">v</td><td class="is-pass">v</td><td class="is-pass">v</td></tr>
-                  </tbody>
-                </table>
-                <video controls preload="metadata">
-                  <source src="assets/rollouts_combined/pick_up_foil_tray_and_throw_it_away.mp4" type="video/mp4">
-                </video>
-              </figure>
-            </div>
+        <div class="ablation-video-card">
+          <p class="prompt-label">
+            Prompt: pick up chip bag and throw it away
+          </p>
+          <figure>
+            <video class="uncertainty-video" controls preload="metadata">
+              <source src="assets/uncertainty/2026-04-02-160529Z-ur5e_single_4-08c100b2b0b8__eval_17725__apr8_full_large_run_5_100000_rtb__pick_up_chip_bag_and_throw_it_away_bottomrow.mp4" type="video/mp4">
+            </video>
+          </figure>
+          <div
+            class="uncertainty-chart"
+            data-src="assets/uncertainty/2026-04-02-160529Z-ur5e_single_4-08c100b2b0b8__eval_17725__apr8_full_large_run_5_100000_rtb__pick_up_chip_bag_and_throw_it_away_uncertainty.json"
+            aria-label="Uncertainty values over rollout chunks"
+          >
+            <p>Loading uncertainty visualization...</p>
           </div>
         </div>
       </section>
 
-      <section class="container section" id="ablation-study" aria-labelledby="ablation-study-title">
-        <h2 id="ablation-study-title">Ablation Study</h2>
-        <p>
-          Cross-view consistency and inverse dynamics both contribute to
-          evaluator fidelity.
-        </p>
-        <div class="subsection-grid">
+      <section class="container section collapsible-section" id="ablation-study" aria-labelledby="ablation-study-title">
+        <details id="ablation-study-details">
+          <summary>
+            <h2 id="ablation-study-title">Ablation Study</h2>
+            <span class="collapse-toggle">
+              <span class="collapse-toggle-label"></span>
+              <span class="collapse-chevron" aria-hidden="true"></span>
+            </span>
+          </summary>
+          <p>
+            Cross-view consistency and inverse dynamics both contribute to
+            evaluator fidelity.
+          </p>
+          <div class="subsection-grid">
           <article class="subsection-card">
             <h3>Cross-View Consistency</h3>
             <p>
@@ -290,48 +222,7 @@
             </div>
           </article>
         </div>
-      </section>
-
-      <section class="container section" id="uncertainty-estimation" aria-labelledby="uncertainty-estimation-title">
-        <h2 id="uncertainty-estimation-title">Uncertainty Estimation</h2>
-        <p>
-          Inverse-dynamics uncertainty acts as a test-time consistency signal
-          for terminating unreliable imagined rollouts.
-        </p>
-        <div class="ablation-video-card">
-          <p class="prompt-label">
-            Prompt: pick up blue bowl and put it in bin
-          </p>
-          <figure>
-            <video class="uncertainty-video" controls preload="metadata">
-              <source src="assets/uncertainty/2026-04-02-084739Z-ur5e_single_4-5168577acfce__eval_17725__apr8_episode_buckets_120000__pick_up_blue_bowl_and_put_it_in_bin_bottomrow.mp4" type="video/mp4">
-            </video>
-          </figure>
-          <div
-            class="uncertainty-chart"
-            data-src="assets/uncertainty/2026-04-02-084739Z-ur5e_single_4-5168577acfce__eval_17725__apr8_episode_buckets_120000__pick_up_blue_bowl_and_put_it_in_bin_bottomrow_uncertainty.json"
-            aria-label="Uncertainty values over rollout chunks"
-          >
-            <p>Loading uncertainty visualization...</p>
-          </div>
-        </div>
-        <div class="ablation-video-card">
-          <p class="prompt-label">
-            Prompt: pick up chip bag and throw it away
-          </p>
-          <figure>
-            <video class="uncertainty-video" controls preload="metadata">
-              <source src="assets/uncertainty/2026-04-02-160529Z-ur5e_single_4-08c100b2b0b8__eval_17725__apr8_full_large_run_5_100000_rtb__pick_up_chip_bag_and_throw_it_away_bottomrow.mp4" type="video/mp4">
-            </video>
-          </figure>
-          <div
-            class="uncertainty-chart"
-            data-src="assets/uncertainty/2026-04-02-160529Z-ur5e_single_4-08c100b2b0b8__eval_17725__apr8_full_large_run_5_100000_rtb__pick_up_chip_bag_and_throw_it_away_uncertainty.json"
-            aria-label="Uncertainty values over rollout chunks"
-          >
-            <p>Loading uncertainty visualization...</p>
-          </div>
-        </div>
+        </details>
       </section>
 
     </main>
@@ -344,6 +235,754 @@
       </div>
     </footer>
     <script>
+      const DEMO_CLIPS = [
+        {
+          embodiment: "YAM",
+          task: "Pick up blue cup",
+          policy: "π0.5",
+          outcome: "success",
+          real: "assets/demo/yam/rollout_pick_up_blue_cup__success__pi0p5__real_world.mp4",
+          world: "assets/demo/yam/rollout_pick_up_blue_cup__success__pi0p5__world_model.mp4"
+        },
+        {
+          embodiment: "YAM",
+          task: "Pick up blue cup",
+          policy: "GR00T N1.7",
+          outcome: "success",
+          real: "assets/demo/yam/rollout_pick_up_blue_cup__success__gr00t_n1p7__real_world.mp4",
+          world: "assets/demo/yam/rollout_pick_up_blue_cup__success__gr00t_n1p7__world_model.mp4"
+        },
+        {
+          embodiment: "YAM",
+          task: "Pick up blue cup",
+          policy: "MolmoAct2",
+          outcome: "success",
+          real: "assets/demo/yam/rollout_pick_up_blue_cup__success__molmoact2-yam__real_world.mp4",
+          world: "assets/demo/yam/rollout_pick_up_blue_cup__success__molmoact2-yam__world_model.mp4"
+        },
+        {
+          embodiment: "YAM",
+          task: "Pick up blue cup",
+          policy: "OpenVLA-OFT",
+          outcome: "success",
+          real: "assets/demo/yam/rollout_pick_up_blue_cup__success__openvla-oft__real_world.mp4",
+          world: "assets/demo/yam/rollout_pick_up_blue_cup__success__openvla-oft__world_model.mp4"
+        },
+        {
+          embodiment: "YAM",
+          task: "Pick up gray cup",
+          policy: "π0.5",
+          outcome: "failure",
+          real: "assets/demo/yam/rollout_pick_up_gray_cup__failure__pi_0p5__real_world.mp4",
+          world: "assets/demo/yam/rollout_pick_up_gray_cup__failure__pi_0p5__world_model.mp4"
+        },
+        {
+          embodiment: "YAM",
+          task: "Pick up gray cup",
+          policy: "GR00T N1.7",
+          outcome: "failure",
+          real: "assets/demo/yam/rollout_pick_up_gray_cup__failure__gr00t_n1p7__real_world.mp4",
+          world: "assets/demo/yam/rollout_pick_up_gray_cup__failure__gr00t_n1p7__world_model.mp4"
+        },
+        {
+          embodiment: "YAM",
+          task: "Pick up gray cup",
+          policy: "MolmoAct2",
+          outcome: "failure",
+          real: "assets/demo/yam/rollout_pick_up_gray_cup__failure__molmoact2-yam__real_world.mp4",
+          world: "assets/demo/yam/rollout_pick_up_gray_cup__failure__molmoact2-yam__world_model.mp4"
+        },
+        {
+          embodiment: "YAM",
+          task: "Pick up gray cup",
+          policy: "OpenVLA-OFT",
+          outcome: "failure",
+          real: "assets/demo/yam/rollout_pick_up_gray_cup__failure__openvla-oft__real_world.mp4",
+          world: "assets/demo/yam/rollout_pick_up_gray_cup__failure__openvla-oft__world_model.mp4"
+        },
+        {
+          embodiment: "YAM",
+          task: "Pick up sponge",
+          policy: "π0.5",
+          outcome: "success",
+          real: "assets/demo/yam/rollout_pick_up_sponge__success__pi_0p5__real_world.mp4",
+          world: "assets/demo/yam/rollout_pick_up_sponge__success__pi_0p5__world_model.mp4"
+        },
+        {
+          embodiment: "YAM",
+          task: "Pick up sponge",
+          policy: "GR00T N1.7",
+          outcome: "failure",
+          real: "assets/demo/yam/rollout_pick_up_sponge__failure__gr00t_n1p7__real_world.mp4",
+          world: "assets/demo/yam/rollout_pick_up_sponge__failure__gr00t_n1p7__world_model.mp4"
+        },
+        {
+          embodiment: "YAM",
+          task: "Pick up sponge",
+          policy: "MolmoAct2",
+          outcome: "failure",
+          real: "assets/demo/yam/rollout_pick_up_sponge__failure__molmoact2-yam__real_world.mp4",
+          world: "assets/demo/yam/rollout_pick_up_sponge__failure__molmoact2-yam__world_model.mp4"
+        },
+        {
+          embodiment: "YAM",
+          task: "Pick up sponge",
+          policy: "OpenVLA-OFT",
+          outcome: "failure",
+          real: "assets/demo/yam/rollout_pick_up_sponge__failure__openvla-oft__real_world.mp4",
+          world: "assets/demo/yam/rollout_pick_up_sponge__failure__openvla-oft__world_model.mp4"
+        },
+        {
+          embodiment: "YAM",
+          task: "Pick up pen",
+          policy: "π0.5",
+          outcome: "failure",
+          real: "assets/demo/yam/rollout_pick_up_pen__failure__pi0p5__real_world.mp4",
+          world: "assets/demo/yam/rollout_pick_up_pen__failure__pi0p5__world_model.mp4"
+        },
+        {
+          embodiment: "YAM",
+          task: "Pick up pen",
+          policy: "GR00T N1.7",
+          outcome: "failure",
+          real: "assets/demo/yam/rollout_pick_up_pen__failure__gr00t_n1p7__real_world.mp4",
+          world: "assets/demo/yam/rollout_pick_up_pen__failure__gr00t_n1p7__world_model.mp4"
+        },
+        {
+          embodiment: "YAM",
+          task: "Pick up pen",
+          policy: "MolmoAct2",
+          outcome: "failure",
+          real: "assets/demo/yam/rollout_pick_up_pen__failure__molmoact2-yam__real_world.mp4",
+          world: "assets/demo/yam/rollout_pick_up_pen__failure__molmoact2-yam__world_model.mp4"
+        },
+        {
+          embodiment: "YAM",
+          task: "Pick up pen",
+          policy: "OpenVLA-OFT",
+          outcome: "failure",
+          real: "assets/demo/yam/rollout_pick_up_pen__failure__openvla-oft__real_world.mp4",
+          world: "assets/demo/yam/rollout_pick_up_pen__failure__openvla-oft__world_model.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up yellow cup and put yellow cup in the blue trash can",
+          policy: "Jun23 pretrain (80k)",
+          real: "assets/demo/ur5_new/2026-04-01-054617Z-ur5e_single_4-4d91350f43f5__eval_17724__apr8_jun23_pretrain_80000__pick_up_yellow_cup_and_put_yellow_cup_in_the_blue_trash_can_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-054617Z-ur5e_single_4-4d91350f43f5__eval_17724__apr8_jun23_pretrain_80000__pick_up_yellow_cup_and_put_yellow_cup_in_the_blue_trash_can_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up blue bowl and put blue bowl in the blue trash can",
+          policy: "Oct14 pretrain (80k)",
+          real: "assets/demo/ur5_new/2026-04-01-061250Z-ur5e_single_4-e2a498fd56f5__eval_17724__apr8_oct14_pretrain_80000__pick_up_blue_bowl_and_put_blue_bowl_in_the_blue_trash_can_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-061250Z-ur5e_single_4-e2a498fd56f5__eval_17724__apr8_oct14_pretrain_80000__pick_up_blue_bowl_and_put_blue_bowl_in_the_blue_trash_can_o.mp4",
+          rollout: "1"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up blue bowl and put blue bowl in the blue trash can",
+          policy: "Oct14 pretrain (80k)",
+          real: "assets/demo/ur5_new/2026-04-01-102232Z-ur5e_single_4-6b910e13d24b__eval_17724__apr8_oct14_pretrain_80000__pick_up_blue_bowl_and_put_blue_bowl_in_the_blue_trash_can_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-102232Z-ur5e_single_4-6b910e13d24b__eval_17724__apr8_oct14_pretrain_80000__pick_up_blue_bowl_and_put_blue_bowl_in_the_blue_trash_can_o.mp4",
+          rollout: "2"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up blue bowl and put blue bowl in the blue trash can",
+          policy: "Oct14 pretrain (80k)",
+          real: "assets/demo/ur5_new/2026-04-01-172539Z-ur5e_single_4-60d82ec13a75__eval_17724__apr8_oct14_pretrain_80000__pick_up_blue_bowl_and_put_blue_bowl_in_the_blue_trash_can_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-172539Z-ur5e_single_4-60d82ec13a75__eval_17724__apr8_oct14_pretrain_80000__pick_up_blue_bowl_and_put_blue_bowl_in_the_blue_trash_can_o.mp4",
+          rollout: "3"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up white bowl and put white bowl in the blue trash can",
+          policy: "Jun23 pretrain (80k)",
+          real: "assets/demo/ur5_new/2026-04-01-061552Z-ur5e_single_4-4c6cca128676__eval_17724__apr8_jun23_pretrain_80000__pick_up_white_bowl_and_put_white_bowl_in_the_blue_trash_can_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-061552Z-ur5e_single_4-4c6cca128676__eval_17724__apr8_jun23_pretrain_80000__pick_up_white_bowl_and_put_white_bowl_in_the_blue_trash_can_o.mp4",
+          rollout: "1"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up white bowl and put white bowl in the blue trash can",
+          policy: "Jun23 pretrain (80k)",
+          real: "assets/demo/ur5_new/2026-04-01-103202Z-ur5e_single_4-2b79ee06f680__eval_17724__apr8_jun23_pretrain_80000__pick_up_white_bowl_and_put_white_bowl_in_the_blue_trash_can_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-103202Z-ur5e_single_4-2b79ee06f680__eval_17724__apr8_jun23_pretrain_80000__pick_up_white_bowl_and_put_white_bowl_in_the_blue_trash_can_o.mp4",
+          rollout: "2"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up orange plate and put orange plate in the blue trash can",
+          policy: "Span buckets Oct14 (80k)",
+          real: "assets/demo/ur5_new/2026-04-01-063425Z-ur5e_single_4-477ebe4176df__eval_17724__apr8_v10_span_buckets_oct14_pretrain_12_22_80000__pick_up_orange_plate_and_put_orange_plate_in_the_blue_trash_can_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-063425Z-ur5e_single_4-477ebe4176df__eval_17724__apr8_v10_span_buckets_oct14_pretrain_12_22_80000__pick_up_orange_plate_and_put_orange_plate_in_the_blue_trash_can_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up chopstick and put chopstick in the blue trash can",
+          policy: "Full large run (100k)",
+          real: "assets/demo/ur5_new/2026-04-01-064058Z-ur5e_single_4-01079a0555b2__eval_17724__apr8_full_large_run_5_100000__pick_up_chopstick_and_put_chopstick_in_the_blue_trash_can_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-064058Z-ur5e_single_4-01079a0555b2__eval_17724__apr8_full_large_run_5_100000__pick_up_chopstick_and_put_chopstick_in_the_blue_trash_can_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up chopstick and put chopstick in the blue trash can",
+          policy: "Span buckets Oct14 (80k)",
+          real: "assets/demo/ur5_new/2026-04-01-064349Z-ur5e_single_4-173b54f4d608__eval_17724__apr8_v10_span_buckets_oct14_pretrain_12_22_80000__pick_up_chopstick_and_put_chopstick_in_the_blue_trash_can_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-064349Z-ur5e_single_4-173b54f4d608__eval_17724__apr8_v10_span_buckets_oct14_pretrain_12_22_80000__pick_up_chopstick_and_put_chopstick_in_the_blue_trash_can_o.mp4",
+          rollout: "1"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up chopstick and put chopstick in the blue trash can",
+          policy: "Span buckets Oct14 (80k)",
+          real: "assets/demo/ur5_new/2026-04-01-123143Z-ur5e_single_4-2c1245aff162__eval_17724__apr8_v10_span_buckets_oct14_pretrain_12_22_80000__pick_up_chopstick_and_put_chopstick_in_the_blue_trash_can_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-123143Z-ur5e_single_4-2c1245aff162__eval_17724__apr8_v10_span_buckets_oct14_pretrain_12_22_80000__pick_up_chopstick_and_put_chopstick_in_the_blue_trash_can_o.mp4",
+          rollout: "2"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up spoon and put spoon in the blue trash can",
+          policy: "Full large run (100k)",
+          real: "assets/demo/ur5_new/2026-04-01-064945Z-ur5e_single_4-94fc8323d4f2__eval_17724__apr8_full_large_run_5_100000__pick_up_spoon_and_put_spoon_in_the_blue_trash_can_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-064945Z-ur5e_single_4-94fc8323d4f2__eval_17724__apr8_full_large_run_5_100000__pick_up_spoon_and_put_spoon_in_the_blue_trash_can_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up chip bag and put chip bag in the clear bussing bin to the left",
+          policy: "Full large run (100k)",
+          real: "assets/demo/ur5_new/2026-04-01-075000Z-ur5e_single_4-de65ffe5a31b__eval_17724__apr8_full_large_run_5_100000__pick_up_chip_bag_and_put_chip_bag_in_the_clear_bussing_bin_to_the_left_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-075000Z-ur5e_single_4-de65ffe5a31b__eval_17724__apr8_full_large_run_5_100000__pick_up_chip_bag_and_put_chip_bag_in_the_clear_bussing_bin_to_the_left_o.mp4",
+          rollout: "1"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up chip bag and put chip bag in the clear bussing bin to the left",
+          policy: "Full large run (100k)",
+          real: "assets/demo/ur5_new/2026-04-01-124559Z-ur5e_single_4-08a011c2bcab__eval_17724__apr8_full_large_run_5_100000__pick_up_chip_bag_and_put_chip_bag_in_the_clear_bussing_bin_to_the_left_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-124559Z-ur5e_single_4-08a011c2bcab__eval_17724__apr8_full_large_run_5_100000__pick_up_chip_bag_and_put_chip_bag_in_the_clear_bussing_bin_to_the_left_o.mp4",
+          rollout: "2"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up plastic lid and put plastic lid in the clear bussing bin to the left",
+          policy: "Jun23 pretrain (80k)",
+          real: "assets/demo/ur5_new/2026-04-01-075817Z-ur5e_single_4-05911986fcd1__eval_17724__apr8_jun23_pretrain_80000__pick_up_plastic_lid_and_put_plastic_lid_in_the_clear_bussing_bin_to_the_left_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-075817Z-ur5e_single_4-05911986fcd1__eval_17724__apr8_jun23_pretrain_80000__pick_up_plastic_lid_and_put_plastic_lid_in_the_clear_bussing_bin_to_the_left_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up bottle and put bottle in the clear bussing bin to the left",
+          policy: "Oct14 pretrain (80k)",
+          real: "assets/demo/ur5_new/2026-04-01-085648Z-ur5e_single_4-7308c0164e9b__eval_17724__apr8_oct14_pretrain_80000__pick_up_bottle_and_put_bottle_in_the_clear_bussing_bin_to_the_left_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-085648Z-ur5e_single_4-7308c0164e9b__eval_17724__apr8_oct14_pretrain_80000__pick_up_bottle_and_put_bottle_in_the_clear_bussing_bin_to_the_left_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up white bowl and put white bowl in the blue trash can",
+          policy: "Oct14 pretrain (80k)",
+          real: "assets/demo/ur5_new/2026-04-01-103928Z-ur5e_single_4-6093970f5ce5__eval_17724__apr8_oct14_pretrain_80000__pick_up_white_bowl_and_put_white_bowl_in_the_blue_trash_can_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-103928Z-ur5e_single_4-6093970f5ce5__eval_17724__apr8_oct14_pretrain_80000__pick_up_white_bowl_and_put_white_bowl_in_the_blue_trash_can_o.mp4",
+          rollout: "1"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up white bowl and put white bowl in the blue trash can",
+          policy: "Oct14 pretrain (80k)",
+          real: "assets/demo/ur5_new/2026-04-01-173505Z-ur5e_single_4-82ddc29d6b8e__eval_17724__apr8_oct14_pretrain_80000__pick_up_white_bowl_and_put_white_bowl_in_the_blue_trash_can_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-173505Z-ur5e_single_4-82ddc29d6b8e__eval_17724__apr8_oct14_pretrain_80000__pick_up_white_bowl_and_put_white_bowl_in_the_blue_trash_can_o.mp4",
+          rollout: "2"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up orange plate and put orange plate in the blue trash can",
+          policy: "Jun23 pretrain (80k)",
+          real: "assets/demo/ur5_new/2026-04-01-110937Z-ur5e_single_4-36220cd1fff4__eval_17724__apr8_jun23_pretrain_80000__pick_up_orange_plate_and_put_orange_plate_in_the_blue_trash_can_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-110937Z-ur5e_single_4-36220cd1fff4__eval_17724__apr8_jun23_pretrain_80000__pick_up_orange_plate_and_put_orange_plate_in_the_blue_trash_can_o.mp4",
+          rollout: "1"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up orange plate and put orange plate in the blue trash can",
+          policy: "Jun23 pretrain (80k)",
+          real: "assets/demo/ur5_new/2026-04-01-174149Z-ur5e_single_4-fac99e4237f0__eval_17724__apr8_jun23_pretrain_80000__pick_up_orange_plate_and_put_orange_plate_in_the_blue_trash_can_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-174149Z-ur5e_single_4-fac99e4237f0__eval_17724__apr8_jun23_pretrain_80000__pick_up_orange_plate_and_put_orange_plate_in_the_blue_trash_can_o.mp4",
+          rollout: "2"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up spoon and put spoon in the blue trash can",
+          policy: "Jun23 pretrain (80k)",
+          real: "assets/demo/ur5_new/2026-04-01-123327Z-ur5e_single_4-585ff86d003a__eval_17724__apr8_jun23_pretrain_80000__pick_up_spoon_and_put_spoon_in_the_blue_trash_can_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-123327Z-ur5e_single_4-585ff86d003a__eval_17724__apr8_jun23_pretrain_80000__pick_up_spoon_and_put_spoon_in_the_blue_trash_can_o.mp4",
+          rollout: "1"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up spoon and put spoon in the blue trash can",
+          policy: "Jun23 pretrain (80k)",
+          real: "assets/demo/ur5_new/2026-04-01-182821Z-ur5e_single_4-634f11a879d9__eval_17724__apr8_jun23_pretrain_80000__pick_up_spoon_and_put_spoon_in_the_blue_trash_can_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-182821Z-ur5e_single_4-634f11a879d9__eval_17724__apr8_jun23_pretrain_80000__pick_up_spoon_and_put_spoon_in_the_blue_trash_can_o.mp4",
+          rollout: "2"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up plastic lid and put plastic lid in the clear bussing bin to the left",
+          policy: "Span buckets Oct14 (80k)",
+          real: "assets/demo/ur5_new/2026-04-01-125923Z-ur5e_single_4-61c42aabcc63__eval_17724__apr8_v10_span_buckets_oct14_pretrain_12_22_80000__pick_up_plastic_lid_and_put_plastic_lid_in_the_clear_bussing_bin_to_the_left_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-125923Z-ur5e_single_4-61c42aabcc63__eval_17724__apr8_v10_span_buckets_oct14_pretrain_12_22_80000__pick_up_plastic_lid_and_put_plastic_lid_in_the_clear_bussing_bin_to_the_left_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up bottle and put bottle in the clear bussing bin to the left",
+          policy: "Jun23 pretrain (80k)",
+          real: "assets/demo/ur5_new/2026-04-01-134451Z-ur5e_single_4-e1bdb26e7851__eval_17724__apr8_jun23_pretrain_80000__pick_up_bottle_and_put_bottle_in_the_clear_bussing_bin_to_the_left_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-134451Z-ur5e_single_4-e1bdb26e7851__eval_17724__apr8_jun23_pretrain_80000__pick_up_bottle_and_put_bottle_in_the_clear_bussing_bin_to_the_left_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up yellow cup and put yellow cup in the blue trash can",
+          policy: "Span buckets Oct14 (80k)",
+          real: "assets/demo/ur5_new/2026-04-01-164108Z-ur5e_single_4-28aadb61202b__eval_17724__apr8_v10_span_buckets_oct14_pretrain_12_22_80000__pick_up_yellow_cup_and_put_yellow_cup_in_the_blue_trash_can_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-164108Z-ur5e_single_4-28aadb61202b__eval_17724__apr8_v10_span_buckets_oct14_pretrain_12_22_80000__pick_up_yellow_cup_and_put_yellow_cup_in_the_blue_trash_can_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up orange cup and put orange cup in the blue trash can",
+          policy: "Full large run (100k)",
+          real: "assets/demo/ur5_new/2026-04-01-164859Z-ur5e_single_4-ec110d9efa3f__eval_17724__apr8_full_large_run_5_100000__pick_up_orange_cup_and_put_orange_cup_in_the_blue_trash_can_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-164859Z-ur5e_single_4-ec110d9efa3f__eval_17724__apr8_full_large_run_5_100000__pick_up_orange_cup_and_put_orange_cup_in_the_blue_trash_can_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up blue bowl and put blue bowl in the blue trash can",
+          policy: "Jun23 pretrain (80k)",
+          real: "assets/demo/ur5_new/2026-04-01-171841Z-ur5e_single_4-01d1363d22d0__eval_17724__apr8_jun23_pretrain_80000__pick_up_blue_bowl_and_put_blue_bowl_in_the_blue_trash_can_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-171841Z-ur5e_single_4-01d1363d22d0__eval_17724__apr8_jun23_pretrain_80000__pick_up_blue_bowl_and_put_blue_bowl_in_the_blue_trash_can_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up white bowl and put white bowl in the blue trash can",
+          policy: "Full large run (100k)",
+          real: "assets/demo/ur5_new/2026-04-01-173251Z-ur5e_single_4-42e6f3786da4__eval_17724__apr8_full_large_run_5_100000__pick_up_white_bowl_and_put_white_bowl_in_the_blue_trash_can_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-173251Z-ur5e_single_4-42e6f3786da4__eval_17724__apr8_full_large_run_5_100000__pick_up_white_bowl_and_put_white_bowl_in_the_blue_trash_can_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up chopstick and put chopstick in the blue trash can",
+          policy: "Jun23 pretrain (80k)",
+          real: "assets/demo/ur5_new/2026-04-01-181402Z-ur5e_single_4-53d02be864cb__eval_17724__apr8_jun23_pretrain_80000__pick_up_chopstick_and_put_chopstick_in_the_blue_trash_can_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-181402Z-ur5e_single_4-53d02be864cb__eval_17724__apr8_jun23_pretrain_80000__pick_up_chopstick_and_put_chopstick_in_the_blue_trash_can_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up chip bag and put chip bag in the clear bussing bin to the left",
+          policy: "Jun23 pretrain (80k)",
+          real: "assets/demo/ur5_new/2026-04-01-193933Z-ur5e_single_4-afe6258133e0__eval_17724__apr8_jun23_pretrain_80000__pick_up_chip_bag_and_put_chip_bag_in_the_clear_bussing_bin_to_the_left_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-193933Z-ur5e_single_4-afe6258133e0__eval_17724__apr8_jun23_pretrain_80000__pick_up_chip_bag_and_put_chip_bag_in_the_clear_bussing_bin_to_the_left_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up chip bag and put chip bag in the clear bussing bin to the left",
+          policy: "Oct14 pretrain (80k)",
+          real: "assets/demo/ur5_new/2026-04-01-194822Z-ur5e_single_4-230fd0c03966__eval_17724__apr8_oct14_pretrain_80000__pick_up_chip_bag_and_put_chip_bag_in_the_clear_bussing_bin_to_the_left_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-194822Z-ur5e_single_4-230fd0c03966__eval_17724__apr8_oct14_pretrain_80000__pick_up_chip_bag_and_put_chip_bag_in_the_clear_bussing_bin_to_the_left_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up plastic lid and put plastic lid in the clear bussing bin to the left",
+          policy: "Oct14 pretrain (80k)",
+          real: "assets/demo/ur5_new/2026-04-01-200638Z-ur5e_single_4-d749d370eb6b__eval_17724__apr8_oct14_pretrain_80000__pick_up_plastic_lid_and_put_plastic_lid_in_the_clear_bussing_bin_to_the_left_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-200638Z-ur5e_single_4-d749d370eb6b__eval_17724__apr8_oct14_pretrain_80000__pick_up_plastic_lid_and_put_plastic_lid_in_the_clear_bussing_bin_to_the_left_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up plastic container and put plastic container in the clear bussing bin to",
+          policy: "Jun23 pretrain (80k)",
+          real: "assets/demo/ur5_new/2026-04-01-201408Z-ur5e_single_4-c116e8171d6f__eval_17724__apr8_jun23_pretrain_80000__pick_up_plastic_container_and_put_plastic_container_in_the_clear_bussing_bin_to_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-201408Z-ur5e_single_4-c116e8171d6f__eval_17724__apr8_jun23_pretrain_80000__pick_up_plastic_container_and_put_plastic_container_in_the_clear_bussing_bin_to_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up foil tray and put foil tray in the clear bussing bin to the left",
+          policy: "Jun23 pretrain (80k)",
+          real: "assets/demo/ur5_new/2026-04-01-202435Z-ur5e_single_4-c9d24b3bbd05__eval_17724__apr8_jun23_pretrain_80000__pick_up_foil_tray_and_put_foil_tray_in_the_clear_bussing_bin_to_the_left_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-202435Z-ur5e_single_4-c9d24b3bbd05__eval_17724__apr8_jun23_pretrain_80000__pick_up_foil_tray_and_put_foil_tray_in_the_clear_bussing_bin_to_the_left_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up yellow cup and put it in bin",
+          policy: "Oct14 pretrain rerun (80k)",
+          real: "assets/demo/ur5_new/2026-04-01-211817Z-ur5e_single_4-6c4f6a20ae47__eval_17725__apr8_oct14_pretrain_rerun_80000__pick_up_yellow_cup_and_put_it_in_bin_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-211817Z-ur5e_single_4-6c4f6a20ae47__eval_17725__apr8_oct14_pretrain_rerun_80000__pick_up_yellow_cup_and_put_it_in_bin_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up orange cup and put it in bin",
+          policy: "Full large run RTB (100k)",
+          real: "assets/demo/ur5_new/2026-04-01-212328Z-ur5e_single_4-d202417b1ab5__eval_17725__apr8_full_large_run_5_100000_rtb__pick_up_orange_cup_and_put_it_in_bin_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-212328Z-ur5e_single_4-d202417b1ab5__eval_17725__apr8_full_large_run_5_100000_rtb__pick_up_orange_cup_and_put_it_in_bin_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up white bowl and put it in bin",
+          policy: "Full large run RTB (100k)",
+          real: "assets/demo/ur5_new/2026-04-01-221347Z-ur5e_single_4-b61c16361710__eval_17725__apr8_full_large_run_5_100000_rtb__pick_up_white_bowl_and_put_it_in_bin_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-221347Z-ur5e_single_4-b61c16361710__eval_17725__apr8_full_large_run_5_100000_rtb__pick_up_white_bowl_and_put_it_in_bin_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up white bowl and put it in bin",
+          policy: "Oct14 pretrain rerun (80k)",
+          real: "assets/demo/ur5_new/2026-04-01-224830Z-ur5e_single_4-14a0c2a8154d__eval_17725__apr8_oct14_pretrain_rerun_80000__pick_up_white_bowl_and_put_it_in_bin_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-01-224830Z-ur5e_single_4-14a0c2a8154d__eval_17725__apr8_oct14_pretrain_rerun_80000__pick_up_white_bowl_and_put_it_in_bin_o.mp4",
+          rollout: "1"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up white bowl and put it in bin",
+          policy: "Oct14 pretrain rerun (80k)",
+          real: "assets/demo/ur5_new/2026-04-02-050156Z-ur5e_single_4-9719fc76b78e__eval_17725__apr8_oct14_pretrain_rerun_80000__pick_up_white_bowl_and_put_it_in_bin_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-02-050156Z-ur5e_single_4-9719fc76b78e__eval_17725__apr8_oct14_pretrain_rerun_80000__pick_up_white_bowl_and_put_it_in_bin_o.mp4",
+          rollout: "2"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up white bowl and put it in bin",
+          policy: "Oct14 pretrain rerun (80k)",
+          real: "assets/demo/ur5_new/2026-04-02-093958Z-ur5e_single_4-b5235cada4f0__eval_17725__apr8_oct14_pretrain_rerun_80000__pick_up_white_bowl_and_put_it_in_bin_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-02-093958Z-ur5e_single_4-b5235cada4f0__eval_17725__apr8_oct14_pretrain_rerun_80000__pick_up_white_bowl_and_put_it_in_bin_o.mp4",
+          rollout: "3"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up orange plate and put it in bin",
+          policy: "Episode buckets (120k)",
+          real: "assets/demo/ur5_new/2026-04-02-003658Z-ur5e_single_4-720962676b09__eval_17725__apr8_episode_buckets_120000__pick_up_orange_plate_and_put_it_in_bin_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-02-003658Z-ur5e_single_4-720962676b09__eval_17725__apr8_episode_buckets_120000__pick_up_orange_plate_and_put_it_in_bin_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up chopstick and put it in bin",
+          policy: "Full large run RTB (100k)",
+          real: "assets/demo/ur5_new/2026-04-02-005750Z-ur5e_single_4-3839a9e7195b__eval_17725__apr8_full_large_run_5_100000_rtb__pick_up_chopstick_and_put_it_in_bin_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-02-005750Z-ur5e_single_4-3839a9e7195b__eval_17725__apr8_full_large_run_5_100000_rtb__pick_up_chopstick_and_put_it_in_bin_o.mp4",
+          rollout: "1"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up chopstick and put it in bin",
+          policy: "Full large run RTB (100k)",
+          real: "assets/demo/ur5_new/2026-04-02-054519Z-ur5e_single_4-3cde735d2349__eval_17725__apr8_full_large_run_5_100000_rtb__pick_up_chopstick_and_put_it_in_bin_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-02-054519Z-ur5e_single_4-3cde735d2349__eval_17725__apr8_full_large_run_5_100000_rtb__pick_up_chopstick_and_put_it_in_bin_o.mp4",
+          rollout: "2"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up spoon and put it in bin",
+          policy: "Oct14 pretrain rerun (80k)",
+          real: "assets/demo/ur5_new/2026-04-02-013750Z-ur5e_single_4-d2d1128ee997__eval_17725__apr8_oct14_pretrain_rerun_80000__pick_up_spoon_and_put_it_in_bin_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-02-013750Z-ur5e_single_4-d2d1128ee997__eval_17725__apr8_oct14_pretrain_rerun_80000__pick_up_spoon_and_put_it_in_bin_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up plastic lid and throw it away",
+          policy: "Full large run RTB (100k)",
+          real: "assets/demo/ur5_new/2026-04-02-023051Z-ur5e_single_4-4ff36ac3845d__eval_17725__apr8_full_large_run_5_100000_rtb__pick_up_plastic_lid_and_throw_it_away_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-02-023051Z-ur5e_single_4-4ff36ac3845d__eval_17725__apr8_full_large_run_5_100000_rtb__pick_up_plastic_lid_and_throw_it_away_o.mp4",
+          rollout: "1"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up plastic lid and throw it away",
+          policy: "Full large run RTB (100k)",
+          real: "assets/demo/ur5_new/2026-04-02-062823Z-ur5e_single_4-1339f714c527__eval_17725__apr8_full_large_run_5_100000_rtb__pick_up_plastic_lid_and_throw_it_away_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-02-062823Z-ur5e_single_4-1339f714c527__eval_17725__apr8_full_large_run_5_100000_rtb__pick_up_plastic_lid_and_throw_it_away_o.mp4",
+          rollout: "2"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up plastic lid and throw it away",
+          policy: "Full large run RTB (100k)",
+          real: "assets/demo/ur5_new/2026-04-02-161302Z-ur5e_single_4-f141d2a07ef3__eval_17725__apr8_full_large_run_5_100000_rtb__pick_up_plastic_lid_and_throw_it_away_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-02-161302Z-ur5e_single_4-f141d2a07ef3__eval_17725__apr8_full_large_run_5_100000_rtb__pick_up_plastic_lid_and_throw_it_away_o.mp4",
+          rollout: "3"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up plastic container and throw it away",
+          policy: "Full large run RTB (100k)",
+          real: "assets/demo/ur5_new/2026-04-02-033930Z-ur5e_single_4-445701b67f6c__eval_17725__apr8_full_large_run_5_100000_rtb__pick_up_plastic_container_and_throw_it_away_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-02-033930Z-ur5e_single_4-445701b67f6c__eval_17725__apr8_full_large_run_5_100000_rtb__pick_up_plastic_container_and_throw_it_away_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up foil tray and throw it away",
+          policy: "Episode buckets (120k)",
+          real: "assets/demo/ur5_new/2026-04-02-035844Z-ur5e_single_4-1af955655c06__eval_17725__apr8_episode_buckets_120000__pick_up_foil_tray_and_throw_it_away_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-02-035844Z-ur5e_single_4-1af955655c06__eval_17725__apr8_episode_buckets_120000__pick_up_foil_tray_and_throw_it_away_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up bottle and throw it away",
+          policy: "Oct14 pretrain rerun (80k)",
+          real: "assets/demo/ur5_new/2026-04-02-041341Z-ur5e_single_4-a462d964aae9__eval_17725__apr8_oct14_pretrain_rerun_80000__pick_up_bottle_and_throw_it_away_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-02-041341Z-ur5e_single_4-a462d964aae9__eval_17725__apr8_oct14_pretrain_rerun_80000__pick_up_bottle_and_throw_it_away_o.mp4",
+          rollout: "1"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up bottle and throw it away",
+          policy: "Oct14 pretrain rerun (80k)",
+          real: "assets/demo/ur5_new/2026-04-02-164803Z-ur5e_single_4-d593b47b0e88__eval_17725__apr8_oct14_pretrain_rerun_80000__pick_up_bottle_and_throw_it_away_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-02-164803Z-ur5e_single_4-d593b47b0e88__eval_17725__apr8_oct14_pretrain_rerun_80000__pick_up_bottle_and_throw_it_away_o.mp4",
+          rollout: "2"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up yellow cup and put it in bin",
+          policy: "Episode buckets (120k)",
+          real: "assets/demo/ur5_new/2026-04-02-042419Z-ur5e_single_4-b31ce0abf76a__eval_17725__apr8_episode_buckets_120000__pick_up_yellow_cup_and_put_it_in_bin_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-02-042419Z-ur5e_single_4-b31ce0abf76a__eval_17725__apr8_episode_buckets_120000__pick_up_yellow_cup_and_put_it_in_bin_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up orange cup and put it in bin",
+          policy: "Episode buckets (120k)",
+          real: "assets/demo/ur5_new/2026-04-02-043254Z-ur5e_single_4-cd8c44b5abc6__eval_17725__apr8_episode_buckets_120000__pick_up_orange_cup_and_put_it_in_bin_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-02-043254Z-ur5e_single_4-cd8c44b5abc6__eval_17725__apr8_episode_buckets_120000__pick_up_orange_cup_and_put_it_in_bin_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up blue bowl and put it in bin",
+          policy: "Oct14 pretrain rerun (80k)",
+          real: "assets/demo/ur5_new/2026-04-02-044641Z-ur5e_single_4-9dee83e39c25__eval_17725__apr8_oct14_pretrain_rerun_80000__pick_up_blue_bowl_and_put_it_in_bin_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-02-044641Z-ur5e_single_4-9dee83e39c25__eval_17725__apr8_oct14_pretrain_rerun_80000__pick_up_blue_bowl_and_put_it_in_bin_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up white bowl and put it in bin",
+          policy: "Episode buckets (120k)",
+          real: "assets/demo/ur5_new/2026-04-02-045925Z-ur5e_single_4-4b1b0d787fb6__eval_17725__apr8_episode_buckets_120000__pick_up_white_bowl_and_put_it_in_bin_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-02-045925Z-ur5e_single_4-4b1b0d787fb6__eval_17725__apr8_episode_buckets_120000__pick_up_white_bowl_and_put_it_in_bin_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up orange plate and put it in bin",
+          policy: "Oct14 pretrain rerun (80k)",
+          real: "assets/demo/ur5_new/2026-04-02-052126Z-ur5e_single_4-292ebe61072d__eval_17725__apr8_oct14_pretrain_rerun_80000__pick_up_orange_plate_and_put_it_in_bin_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-02-052126Z-ur5e_single_4-292ebe61072d__eval_17725__apr8_oct14_pretrain_rerun_80000__pick_up_orange_plate_and_put_it_in_bin_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up spoon and put it in bin",
+          policy: "Full large run RTB (100k)",
+          real: "assets/demo/ur5_new/2026-04-02-055747Z-ur5e_single_4-ee73d5d1428e__eval_17725__apr8_full_large_run_5_100000_rtb__pick_up_spoon_and_put_it_in_bin_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-02-055747Z-ur5e_single_4-ee73d5d1428e__eval_17725__apr8_full_large_run_5_100000_rtb__pick_up_spoon_and_put_it_in_bin_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up chip bag and throw it away",
+          policy: "Full large run RTB (100k)",
+          real: "assets/demo/ur5_new/2026-04-02-061354Z-ur5e_single_4-ac49d5be2aa7__eval_17725__apr8_full_large_run_5_100000_rtb__pick_up_chip_bag_and_throw_it_away_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-02-061354Z-ur5e_single_4-ac49d5be2aa7__eval_17725__apr8_full_large_run_5_100000_rtb__pick_up_chip_bag_and_throw_it_away_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up yellow cup and put it in bin",
+          policy: "Full large run RTB (100k)",
+          real: "assets/demo/ur5_new/2026-04-02-081203Z-ur5e_single_4-9eda5a6a2cf3__eval_17725__apr8_full_large_run_5_100000_rtb__pick_up_yellow_cup_and_put_it_in_bin_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-02-081203Z-ur5e_single_4-9eda5a6a2cf3__eval_17725__apr8_full_large_run_5_100000_rtb__pick_up_yellow_cup_and_put_it_in_bin_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up orange cup and put it in bin",
+          policy: "Oct14 pretrain rerun (80k)",
+          real: "assets/demo/ur5_new/2026-04-02-083614Z-ur5e_single_4-b2a586ad85d0__eval_17725__apr8_oct14_pretrain_rerun_80000__pick_up_orange_cup_and_put_it_in_bin_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-02-083614Z-ur5e_single_4-b2a586ad85d0__eval_17725__apr8_oct14_pretrain_rerun_80000__pick_up_orange_cup_and_put_it_in_bin_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up orange plate and put it in bin",
+          policy: "Full large run RTB (100k)",
+          real: "assets/demo/ur5_new/2026-04-02-152050Z-ur5e_single_4-e2e1b8eb918a__eval_17725__apr8_full_large_run_5_100000_rtb__pick_up_orange_plate_and_put_it_in_bin_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-02-152050Z-ur5e_single_4-e2e1b8eb918a__eval_17725__apr8_full_large_run_5_100000_rtb__pick_up_orange_plate_and_put_it_in_bin_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up spoon and put it in bin",
+          policy: "Episode buckets (120k)",
+          real: "assets/demo/ur5_new/2026-04-02-155943Z-ur5e_single_4-a03c5dc5a8aa__eval_17725__apr8_episode_buckets_120000__pick_up_spoon_and_put_it_in_bin_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-02-155943Z-ur5e_single_4-a03c5dc5a8aa__eval_17725__apr8_episode_buckets_120000__pick_up_spoon_and_put_it_in_bin_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up chip bag and throw it away",
+          policy: "Oct14 pretrain rerun (80k)",
+          real: "assets/demo/ur5_new/2026-04-02-161000Z-ur5e_single_4-31f44cdbd31c__eval_17725__apr8_oct14_pretrain_rerun_80000__pick_up_chip_bag_and_throw_it_away_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-02-161000Z-ur5e_single_4-31f44cdbd31c__eval_17725__apr8_oct14_pretrain_rerun_80000__pick_up_chip_bag_and_throw_it_away_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up plastic container and throw it away",
+          policy: "Oct14 pretrain rerun (80k)",
+          real: "assets/demo/ur5_new/2026-04-02-162333Z-ur5e_single_4-348e0c7df6e6__eval_17725__apr8_oct14_pretrain_rerun_80000__pick_up_plastic_container_and_throw_it_away_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-02-162333Z-ur5e_single_4-348e0c7df6e6__eval_17725__apr8_oct14_pretrain_rerun_80000__pick_up_plastic_container_and_throw_it_away_o.mp4"
+        },
+        {
+          embodiment: "UR5",
+          task: "Pick up foil tray and throw it away",
+          policy: "Oct14 pretrain rerun (80k)",
+          real: "assets/demo/ur5_new/2026-04-02-163321Z-ur5e_single_4-1f5747544615__eval_17725__apr8_oct14_pretrain_rerun_80000__pick_up_foil_tray_and_throw_it_away_real_world.mp4",
+          world: "assets/demo/ur5_new/2026-04-02-163321Z-ur5e_single_4-1f5747544615__eval_17725__apr8_oct14_pretrain_rerun_80000__pick_up_foil_tray_and_throw_it_away_o.mp4"
+        }
+      ];
+
+      function unique(values) {
+        return [...new Set(values)];
+      }
+
+      function clipsFor(embodiment, task, policy, rollout) {
+        return DEMO_CLIPS.filter((clip) => {
+          if (clip.embodiment !== embodiment) return false;
+          if (task && clip.task !== task) return false;
+          if (policy && clip.policy !== policy) return false;
+          if (rollout && (clip.rollout || "1") !== rollout) return false;
+          return true;
+        });
+      }
+
+      function fillSelect(select, options, selected) {
+        select.innerHTML = "";
+        if (!options.length) {
+          const option = document.createElement("option");
+          option.value = "";
+          option.textContent = "No options available";
+          select.append(option);
+          select.disabled = true;
+          return;
+        }
+
+        select.disabled = false;
+        options.forEach((value) => {
+          const option = document.createElement("option");
+          option.value = value;
+          option.textContent = value;
+          if (value === selected) option.selected = true;
+          select.append(option);
+        });
+      }
+
+      function syncDemoVideos(realVideo, worldVideo) {
+        const pair = [realVideo, worldVideo];
+        let syncing = false;
+
+        const other = (video) => (video === realVideo ? worldVideo : realVideo);
+
+        pair.forEach((video) => {
+          video.addEventListener("play", () => {
+            const next = other(video);
+            if (next.paused) next.play().catch(() => {});
+          });
+          video.addEventListener("pause", () => {
+            const next = other(video);
+            if (!next.paused) next.pause();
+          });
+          video.addEventListener("seeked", () => {
+            if (syncing) return;
+            syncing = true;
+            other(video).currentTime = video.currentTime;
+            syncing = false;
+          });
+        });
+      }
+
+      function renderDemoClip(clip) {
+        const stage = document.getElementById("demo-stage");
+        if (!clip) {
+          stage.innerHTML = '<p class="demo-empty">No real-world / world-model pair is available for this selection yet.</p>';
+          return;
+        }
+
+        stage.innerHTML = `
+          <div class="demo-video-grid">
+            <figure class="demo-video-card">
+              <div class="demo-video-label">
+                <strong>Real-world rollout</strong>
+                ${clip.outcome ? `<span class="demo-outcome is-${clip.outcome}">${clip.outcome}</span>` : ""}
+              </div>
+              <video id="demo-real-video" controls preload="metadata" playsinline>
+                <source src="${clip.real}" type="video/mp4">
+              </video>
+            </figure>
+            <figure class="demo-video-card">
+              <div class="demo-video-label">
+                <strong>World-model rollout</strong>
+                ${clip.outcome ? `<span class="demo-outcome is-${clip.outcome}">${clip.outcome}</span>` : ""}
+              </div>
+              <video id="demo-world-video" controls preload="metadata" playsinline>
+                <source src="${clip.world}" type="video/mp4">
+              </video>
+            </figure>
+          </div>
+        `;
+
+        syncDemoVideos(
+          document.getElementById("demo-real-video"),
+          document.getElementById("demo-world-video")
+        );
+      }
+
+      function initRolloutDemo() {
+        const form = document.getElementById("demo-controls");
+        const taskSelect = document.getElementById("demo-task");
+        const policySelect = document.getElementById("demo-policy");
+        const policyField = document.getElementById("demo-policy-field");
+        if (!form || !taskSelect || !policySelect || !policyField) return;
+
+        const pickRandomClip = (clips) => {
+          if (!clips.length) return null;
+          return clips[Math.floor(Math.random() * clips.length)];
+        };
+
+        const update = (preserveTask = true, preservePolicy = true) => {
+          const embodiment = form.elements.embodiment.value;
+          const hidePolicy = embodiment === "UR5";
+          const available = clipsFor(embodiment);
+          const tasks = unique(available.map((clip) => clip.task));
+          const nextTask = preserveTask && tasks.includes(taskSelect.value)
+            ? taskSelect.value
+            : (tasks[0] || "");
+          fillSelect(taskSelect, tasks, nextTask);
+
+          const taskClips = clipsFor(embodiment, nextTask);
+          policyField.hidden = hidePolicy;
+
+          let selectedClips = taskClips;
+          if (!hidePolicy) {
+            const policies = unique(taskClips.map((clip) => clip.policy));
+            const nextPolicy = preservePolicy && policies.includes(policySelect.value)
+              ? policySelect.value
+              : (policies[0] || "");
+            fillSelect(policySelect, policies, nextPolicy);
+            selectedClips = clipsFor(embodiment, nextTask, nextPolicy);
+          }
+
+          renderDemoClip(pickRandomClip(selectedClips));
+        };
+
+        form.addEventListener("change", (event) => {
+          if (event.target.name === "embodiment") update(false, false);
+          else if (event.target.name === "task") update(true, false);
+          else update(true, true);
+        });
+
+        update(false, false);
+      }
+
+      initRolloutDemo();
+
       async function renderUncertaintyChart(chart) {
         try {
           const response = await fetch(chart.dataset.src);
@@ -423,6 +1062,18 @@
       }
 
       document.querySelectorAll(".uncertainty-chart").forEach(renderUncertaintyChart);
+
+      const ablationDetails = document.getElementById("ablation-study-details");
+      if (ablationDetails) {
+        ablationDetails.open = false;
+      }
+      document.querySelector('a[href="#ablation-study"]')?.addEventListener("click", () => {
+        if (ablationDetails) ablationDetails.open = false;
+      });
+      ablationDetails?.addEventListener("toggle", () => {
+        if (ablationDetails.open) return;
+        ablationDetails.querySelectorAll("video").forEach((video) => video.pause());
+      });
     </script>
   </body>
 </html>
