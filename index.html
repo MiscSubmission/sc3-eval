@@ -8,7 +8,7 @@
       content="Project page for SC3-Eval: Evaluating Robot Foundation Models via Self-Consistent Video Generation."
     >
     <title>SC3-Eval | Project Page</title>
-    <link rel="stylesheet" href="styles.css?v=20260924-ur5-soon">
+    <link rel="stylesheet" href="styles.css?v=20260924-yam-ann">
   </head>
   <body>
     <header class="site-hero">
@@ -230,7 +230,7 @@
     <footer class="site-footer">
       <div class="container">
         <p>
-          Anonymous submission &middot; Last updated May 2026
+          Anonymous submission &middot; Last updated Sep 2026
         </p>
       </div>
     </footer>
@@ -274,7 +274,7 @@
           policy: "π0.5",
           outcome: "failure",
           real: "assets/demo/yam/rollout_pick_up_gray_cup__failure__pi_0p5__real_world.mp4",
-          world: "assets/demo/yam/rollout_pick_up_gray_cup__failure__pi_0p5__world_model.mp4"
+          world: "assets/demo/yam/rollout_pick_up_gray_cup__failure__pi_0p5__world_model_vx.mp4"
         },
         {
           embodiment: "YAM",
@@ -282,7 +282,7 @@
           policy: "GR00T N1.7",
           outcome: "failure",
           real: "assets/demo/yam/rollout_pick_up_gray_cup__failure__gr00t_n1p7__real_world.mp4",
-          world: "assets/demo/yam/rollout_pick_up_gray_cup__failure__gr00t_n1p7__world_model.mp4"
+          world: "assets/demo/yam/rollout_pick_up_gray_cup__failure__gr00t_n1p7__world_model_vx.mp4"
         },
         {
           embodiment: "YAM",
@@ -330,7 +330,7 @@
           policy: "OpenVLA-OFT",
           outcome: "failure",
           real: "assets/demo/yam/rollout_pick_up_sponge__failure__openvla-oft__real_world.mp4",
-          world: "assets/demo/yam/rollout_pick_up_sponge__failure__openvla-oft__world_model.mp4"
+          world: "assets/demo/yam/rollout_pick_up_sponge__failure__openvla-oft__world_model_vx.mp4"
         },
         {
           embodiment: "YAM",
@@ -898,6 +898,27 @@
         });
       }
 
+      function yamAnnotationsFromClip(clip) {
+        const filename = (clip.world || "").toLowerCase();
+        if (filename.includes("success")) {
+          return { languageFollowing: true, objectLifting: true };
+        }
+        if (filename.includes("failure") && filename.includes("vx")) {
+          return { languageFollowing: true, objectLifting: false };
+        }
+        return { languageFollowing: false, objectLifting: false };
+      }
+
+      function annotationBadge(label, ok) {
+        const status = ok ? "success" : "failure";
+        return `<span class="demo-outcome is-${status}">${label}: ${status}</span>`;
+      }
+
+      function yamAnnotationRow(clip, label) {
+        const yam = yamAnnotationsFromClip(clip);
+        return `<div class="demo-annotations" aria-label="${label}">${annotationBadge("Language following", yam.languageFollowing)}${annotationBadge("Object lifting", yam.objectLifting)}</div>`;
+      }
+
       function renderDemoClip(clip) {
         const stage = document.getElementById("demo-stage");
         if (!clip) {
@@ -905,25 +926,32 @@
           return;
         }
 
+        const isYam = clip.embodiment === "YAM";
+        const outcomeBadge = !isYam && clip.outcome
+          ? `<span class="demo-outcome is-${clip.outcome}">${clip.outcome}</span>`
+          : "";
+
         stage.innerHTML = `
           <div class="demo-video-grid">
             <figure class="demo-video-card">
               <div class="demo-video-label">
                 <strong>Real-world rollout</strong>
-                ${clip.outcome ? `<span class="demo-outcome is-${clip.outcome}">${clip.outcome}</span>` : ""}
+                ${outcomeBadge}
               </div>
               <video id="demo-real-video" controls preload="metadata" playsinline>
                 <source src="${clip.real}" type="video/mp4">
               </video>
+              ${isYam ? yamAnnotationRow(clip, "Real-world annotations") : ""}
             </figure>
             <figure class="demo-video-card">
               <div class="demo-video-label">
                 <strong>World-model rollout</strong>
-                ${clip.outcome ? `<span class="demo-outcome is-${clip.outcome}">${clip.outcome}</span>` : ""}
+                ${outcomeBadge}
               </div>
               <video id="demo-world-video" controls preload="metadata" playsinline>
                 <source src="${clip.world}" type="video/mp4">
               </video>
+              ${isYam ? yamAnnotationRow(clip, "World-model annotations") : ""}
             </figure>
           </div>
         `;

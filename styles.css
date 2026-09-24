@@ -465,6 +465,13 @@ h3 {
   color: #9b2c2c;
 }
 
+.demo-annotations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
 .demo-video-card video {
   display: block;
   width: 100%;
