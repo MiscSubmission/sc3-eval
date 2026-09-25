@@ -1,0 +1,253 @@
+Episode ID,Language Instruction,Checkpoint Name,Task,GT video (1/3),GT video (2/3),GT video (3/3)
+2026-04-01-054617Z-ur5e_single_4-4d91350f43f5,pick up yellow cup and put yellow cup in the blue trash can,jun23_pretrain_80000,eval_17724,1,1,0
+2026-04-01-060119Z-ur5e_single_4-063834052a07,pick up orange cup and put orange cup in the blue trash can,jun23_pretrain_80000,eval_17724,1,1,1
+2026-04-01-060959Z-ur5e_single_4-98798f825c68,pick up blue bowl and put blue bowl in the blue trash can,jun23_pretrain_80000,eval_17724,1,1,0
+2026-04-01-061552Z-ur5e_single_4-4c6cca128676,pick up white bowl and put white bowl in the blue trash can,jun23_pretrain_80000,eval_17724,1,1,0
+2026-04-01-062156Z-ur5e_single_4-a754aa777d21,pick up orange plate and put orange plate in the blue trash can,jun23_pretrain_80000,eval_17724,1,0,0
+2026-04-01-063631Z-ur5e_single_4-5128796e6251,pick up chopstick and put chopstick in the blue trash can,jun23_pretrain_80000,eval_17724,0,0,0
+2026-04-01-064734Z-ur5e_single_4-cfdc9ab8db7f,pick up spoon and put spoon in the blue trash can,jun23_pretrain_80000,eval_17724,0,0,0
+2026-04-01-074119Z-ur5e_single_4-7b5a6390882e,pick up chip bag and put chip bag in the clear bussing bin to the left,jun23_pretrain_80000,eval_17724,1,1,1
+2026-04-01-075817Z-ur5e_single_4-05911986fcd1,pick up plastic lid and put plastic lid in the clear bussing bin to the left,jun23_pretrain_80000,eval_17724,1,1,1
+2026-04-01-081241Z-ur5e_single_4-41eef5d50945,pick up plastic container and put plastic container in the clear bussing bin to the left,jun23_pretrain_80000,eval_17724,1,1,0
+2026-04-01-082757Z-ur5e_single_4-a3e476e2bff4,pick up foil tray and put foil tray in the clear bussing bin to the left,jun23_pretrain_80000,eval_17724,1,1,1
+2026-04-01-084813Z-ur5e_single_4-198078bfd7a8,pick up bottle and put bottle in the clear bussing bin to the left,jun23_pretrain_80000,eval_17724,1,1,0
+2026-04-01-092028Z-ur5e_single_4-178380dc56f1,pick up yellow cup and put yellow cup in the blue trash can,jun23_pretrain_80000,eval_17724,1,1,1
+2026-04-01-093443Z-ur5e_single_4-82eeaac431bb,pick up orange cup and put orange cup in the blue trash can,jun23_pretrain_80000,eval_17724,1,1,1
+2026-04-01-103202Z-ur5e_single_4-2b79ee06f680,pick up white bowl and put white bowl in the blue trash can,jun23_pretrain_80000,eval_17724,1,1,0
+2026-04-01-110937Z-ur5e_single_4-36220cd1fff4,pick up orange plate and put orange plate in the blue trash can,jun23_pretrain_80000,eval_17724,1,0,0
+2026-04-01-121612Z-ur5e_single_4-51292dd70107,pick up chopstick and put chopstick in the blue trash can,jun23_pretrain_80000,eval_17724,1,1,1
+2026-04-01-123327Z-ur5e_single_4-585ff86d003a,pick up spoon and put spoon in the blue trash can,jun23_pretrain_80000,eval_17724,1,0,0
+2026-04-01-124418Z-ur5e_single_4-8ac8625254e3,pick up chip bag and put chip bag in the clear bussing bin to the left,jun23_pretrain_80000,eval_17724,1,1,0
+2026-04-01-125403Z-ur5e_single_4-4af61e19ab4c,pick up plastic lid and put plastic lid in the clear bussing bin to the left,jun23_pretrain_80000,eval_17724,1,1,0
+2026-04-01-130142Z-ur5e_single_4-e377adc921f6,pick up plastic container and put plastic container in the clear bussing bin to the left,jun23_pretrain_80000,eval_17724,0,0,0
+2026-04-01-132006Z-ur5e_single_4-ac0f328947cb,pick up foil tray and put foil tray in the clear bussing bin to the left,jun23_pretrain_80000,eval_17724,1,0,0
+2026-04-01-134451Z-ur5e_single_4-e1bdb26e7851,pick up bottle and put bottle in the clear bussing bin to the left,jun23_pretrain_80000,eval_17724,1,1,0
+2026-04-01-163208Z-ur5e_single_4-7f39dc2d115a,pick up yellow cup and put yellow cup in the blue trash can,jun23_pretrain_80000,eval_17724,1,1,1
+2026-04-01-164256Z-ur5e_single_4-ae2fd23771a0,pick up orange cup and put orange cup in the blue trash can,jun23_pretrain_80000,eval_17724,0,0,0
+2026-04-01-171841Z-ur5e_single_4-01d1363d22d0,pick up blue bowl and put blue bowl in the blue trash can,jun23_pretrain_80000,eval_17724,1,1,1
+2026-04-01-173123Z-ur5e_single_4-27ddf6c46758,pick up white bowl and put white bowl in the blue trash can,jun23_pretrain_80000,eval_17724,1,1,1
+2026-04-01-174149Z-ur5e_single_4-fac99e4237f0,pick up orange plate and put orange plate in the blue trash can,jun23_pretrain_80000,eval_17724,1,1,0
+2026-04-01-181402Z-ur5e_single_4-53d02be864cb,pick up chopstick and put chopstick in the blue trash can,jun23_pretrain_80000,eval_17724,1,1,1
+2026-04-01-182821Z-ur5e_single_4-634f11a879d9,pick up spoon and put spoon in the blue trash can,jun23_pretrain_80000,eval_17724,1,0,0
+2026-04-01-193933Z-ur5e_single_4-afe6258133e0,pick up chip bag and put chip bag in the clear bussing bin to the left,jun23_pretrain_80000,eval_17724,1,1,0
+2026-04-01-195220Z-ur5e_single_4-e41e5567888b,pick up plastic lid and put plastic lid in the clear bussing bin to the left,jun23_pretrain_80000,eval_17724,1,0,0
+2026-04-01-201408Z-ur5e_single_4-c116e8171d6f,pick up plastic container and put plastic container in the clear bussing bin to the left,jun23_pretrain_80000,eval_17724,1,1,0
+2026-04-01-202435Z-ur5e_single_4-c9d24b3bbd05,pick up foil tray and put foil tray in the clear bussing bin to the left,jun23_pretrain_80000,eval_17724,1,1,0
+2026-04-01-204331Z-ur5e_single_4-33abc38258de,pick up bottle and put bottle in the clear bussing bin to the left,jun23_pretrain_80000,eval_17724,1,1,0
+,,,,,,
+2026-04-01-055031Z-ur5e_single_4-241fc7ff9647,pick up yellow cup and put yellow cup in the blue trash can,full_large_run_5_100000,eval_17724,1,1,1
+2026-04-01-060337Z-ur5e_single_4-52aad9fb2aaa,pick up orange cup and put orange cup in the blue trash can,full_large_run_5_100000,eval_17724,1,0,0
+2026-04-01-061116Z-ur5e_single_4-a3bfcec71953,pick up blue bowl and put blue bowl in the blue trash can,full_large_run_5_100000,eval_17724,1,1,0
+2026-04-01-061709Z-ur5e_single_4-083dd3c2d644,pick up white bowl and put white bowl in the blue trash can,full_large_run_5_100000,eval_17724,1,1,0
+2026-04-01-064058Z-ur5e_single_4-01079a0555b2,pick up chopstick and put chopstick in the blue trash can,full_large_run_5_100000,eval_17724,1,0,0
+2026-04-01-064945Z-ur5e_single_4-94fc8323d4f2,pick up spoon and put spoon in the blue trash can,full_large_run_5_100000,eval_17724,1,1,0
+2026-04-01-075000Z-ur5e_single_4-de65ffe5a31b,pick up chip bag and put chip bag in the clear bussing bin to the left,full_large_run_5_100000,eval_17724,1,1,0
+2026-04-01-080303Z-ur5e_single_4-0a65dda7935d,pick up plastic lid and put plastic lid in the clear bussing bin to the left,full_large_run_5_100000,eval_17724,1,1,0
+2026-04-01-081903Z-ur5e_single_4-e7da5cdce432,pick up plastic container and put plastic container in the clear bussing bin to the left,full_large_run_5_100000,eval_17724,1,1,0
+2026-04-01-083054Z-ur5e_single_4-1d21186cdf5a,pick up foil tray and put foil tray in the clear bussing bin to the left,full_large_run_5_100000,eval_17724,1,0,0
+2026-04-01-085238Z-ur5e_single_4-07655ee3ea6d,pick up bottle and put bottle in the clear bussing bin to the left,full_large_run_5_100000,eval_17724,1,1,0
+2026-04-01-092306Z-ur5e_single_4-448b7f98c5f1,pick up yellow cup and put yellow cup in the blue trash can,full_large_run_5_100000,eval_17724,1,1,1
+2026-04-01-093712Z-ur5e_single_4-5d907235fd5c,pick up orange cup and put orange cup in the blue trash can,full_large_run_5_100000,eval_17724,1,0,0
+2026-04-01-102022Z-ur5e_single_4-ca9c71ddaa6d,pick up blue bowl and put blue bowl in the blue trash can,full_large_run_5_100000,eval_17724,1,1,1
+2026-04-01-103511Z-ur5e_single_4-d131f988d440,pick up white bowl and put white bowl in the blue trash can,full_large_run_5_100000,eval_17724,1,1,0
+2026-04-01-111319Z-ur5e_single_4-0022cf4e3b31,pick up orange plate and put orange plate in the blue trash can,full_large_run_5_100000,eval_17724,1,1,0
+2026-04-01-121936Z-ur5e_single_4-807ea9f1b98b,pick up chopstick and put chopstick in the blue trash can,full_large_run_5_100000,eval_17724,1,0,0
+2026-04-01-123559Z-ur5e_single_4-1cb8cf525a04,pick up spoon and put spoon in the blue trash can,full_large_run_5_100000,eval_17724,1,1,0
+2026-04-01-124559Z-ur5e_single_4-08a011c2bcab,pick up chip bag and put chip bag in the clear bussing bin to the left,full_large_run_5_100000,eval_17724,1,1,0
+2026-04-01-125603Z-ur5e_single_4-80288605aee2,pick up plastic lid and put plastic lid in the clear bussing bin to the left,full_large_run_5_100000,eval_17724,1,1,0
+2026-04-01-131256Z-ur5e_single_4-df2deeffe674,pick up plastic container and put plastic container in the clear bussing bin to the left,full_large_run_5_100000,eval_17724,1,0,0
+2026-04-01-132123Z-ur5e_single_4-abb6c8020975,pick up foil tray and put foil tray in the clear bussing bin to the left,full_large_run_5_100000,eval_17724,1,1,0
+2026-04-01-134719Z-ur5e_single_4-b3ec4087d898,pick up bottle and put bottle in the clear bussing bin to the left,full_large_run_5_100000,eval_17724,1,1,0
+2026-04-01-163404Z-ur5e_single_4-8baa12ca07ac,pick up yellow cup and put yellow cup in the blue trash can,full_large_run_5_100000,eval_17724,1,0,0
+2026-04-01-164859Z-ur5e_single_4-ec110d9efa3f,pick up orange cup and put orange cup in the blue trash can,full_large_run_5_100000,eval_17724,1,0,0
+2026-04-01-172122Z-ur5e_single_4-2f867610442f,pick up blue bowl and put blue bowl in the blue trash can,full_large_run_5_100000,eval_17724,1,1,1
+2026-04-01-173251Z-ur5e_single_4-42e6f3786da4,pick up white bowl and put white bowl in the blue trash can,full_large_run_5_100000,eval_17724,1,1,1
+2026-04-01-174924Z-ur5e_single_4-a784e2e74dff,pick up orange plate and put orange plate in the blue trash can,full_large_run_5_100000,eval_17724,1,0,0
+2026-04-01-181551Z-ur5e_single_4-65627bd4a1e9,pick up chopstick and put chopstick in the blue trash can,full_large_run_5_100000,eval_17724,1,0,0
+2026-04-01-184057Z-ur5e_single_4-40b3edf7ae2e,pick up spoon and put spoon in the blue trash can,full_large_run_5_100000,eval_17724,1,0,0
+2026-04-01-194242Z-ur5e_single_4-26553251a385,pick up chip bag and put chip bag in the clear bussing bin to the left,full_large_run_5_100000,eval_17724,1,1,0
+2026-04-01-200557Z-ur5e_single_4-90880ce606b3,pick up plastic lid and put plastic lid in the clear bussing bin to the left,full_large_run_5_100000,eval_17724,0,0,0
+2026-04-01-201544Z-ur5e_single_4-104ff166a12d,pick up plastic container and put plastic container in the clear bussing bin to the left,full_large_run_5_100000,eval_17724,0,0,0
+2026-04-01-202716Z-ur5e_single_4-8dc8f25dc1b7,pick up foil tray and put foil tray in the clear bussing bin to the left,full_large_run_5_100000,eval_17724,1,1,0
+2026-04-01-204726Z-ur5e_single_4-80d4aa2b1b20,pick up bottle and put bottle in the clear bussing bin to the left,full_large_run_5_100000,eval_17724,1,0,0
+,,,,,,
+2026-04-01-055407Z-ur5e_single_4-5db539ec3414,pick up yellow cup and put yellow cup in the blue trash can,oct14_pretrain_80000,eval_17724,1,1,1
+2026-04-01-060548Z-ur5e_single_4-df0921eb57ef,pick up orange cup and put orange cup in the blue trash can,oct14_pretrain_80000,eval_17724,1,1,1
+2026-04-01-061250Z-ur5e_single_4-e2a498fd56f5,pick up blue bowl and put blue bowl in the blue trash can,oct14_pretrain_80000,eval_17724,1,1,1
+2026-04-01-061832Z-ur5e_single_4-70799660cc36,pick up white bowl and put white bowl in the blue trash can,oct14_pretrain_80000,eval_17724,1,1,1
+2026-04-01-063058Z-ur5e_single_4-2403dbf4c37d,pick up orange plate and put orange plate in the blue trash can,oct14_pretrain_80000,eval_17724,1,0,0
+2026-04-01-064159Z-ur5e_single_4-cae647a98fcf,pick up chopstick and put chopstick in the blue trash can,oct14_pretrain_80000,eval_17724,1,0,0
+2026-04-01-075056Z-ur5e_single_4-0baab6f829c4,pick up chip bag and put chip bag in the clear bussing bin to the left,oct14_pretrain_80000,eval_17724,1,1,0
+2026-04-01-080622Z-ur5e_single_4-44110faca403,pick up plastic lid and put plastic lid in the clear bussing bin to the left,oct14_pretrain_80000,eval_17724,1,1,0
+2026-04-01-082133Z-ur5e_single_4-c28aec93756f,pick up plastic container and put plastic container in the clear bussing bin to the left,oct14_pretrain_80000,eval_17724,1,1,0
+2026-04-01-083411Z-ur5e_single_4-d3a7cc1f86ed,pick up foil tray and put foil tray in the clear bussing bin to the left,oct14_pretrain_80000,eval_17724,1,0,0
+2026-04-01-085648Z-ur5e_single_4-7308c0164e9b,pick up bottle and put bottle in the clear bussing bin to the left,oct14_pretrain_80000,eval_17724,1,1,0
+2026-04-01-092615Z-ur5e_single_4-faf617373ee8,pick up yellow cup and put yellow cup in the blue trash can,oct14_pretrain_80000,eval_17724,1,1,1
+2026-04-01-094009Z-ur5e_single_4-32b572f71a32,pick up orange cup and put orange cup in the blue trash can,oct14_pretrain_80000,eval_17724,1,1,1
+2026-04-01-102232Z-ur5e_single_4-6b910e13d24b,pick up blue bowl and put blue bowl in the blue trash can,oct14_pretrain_80000,eval_17724,1,1,1
+2026-04-01-103928Z-ur5e_single_4-6093970f5ce5,pick up white bowl and put white bowl in the blue trash can,oct14_pretrain_80000,eval_17724,1,1,1
+2026-04-01-111629Z-ur5e_single_4-695f98089a85,pick up orange plate and put orange plate in the blue trash can,oct14_pretrain_80000,eval_17724,1,1,0
+2026-04-01-122513Z-ur5e_single_4-3af0f6cef539,pick up chopstick and put chopstick in the blue trash can,oct14_pretrain_80000,eval_17724,1,1,0
+2026-04-01-123730Z-ur5e_single_4-fcbf54dfad20,pick up spoon and put spoon in the blue trash can,oct14_pretrain_80000,eval_17724,1,0,0
+2026-04-01-125013Z-ur5e_single_4-79d531895023,pick up chip bag and put chip bag in the clear bussing bin to the left,oct14_pretrain_80000,eval_17724,1,1,0
+2026-04-01-125752Z-ur5e_single_4-b04bd28e50e7,pick up plastic lid and put plastic lid in the clear bussing bin to the left,oct14_pretrain_80000,eval_17724,1,1,0
+2026-04-01-131534Z-ur5e_single_4-0a7400ce9dca,pick up plastic container and put plastic container in the clear bussing bin to the left,oct14_pretrain_80000,eval_17724,1,1,0
+2026-04-01-132324Z-ur5e_single_4-1f1c35de7445,pick up foil tray and put foil tray in the clear bussing bin to the left,oct14_pretrain_80000,eval_17724,1,0,0
+2026-04-01-163709Z-ur5e_single_4-d5e727b93b0e,pick up yellow cup and put yellow cup in the blue trash can,oct14_pretrain_80000,eval_17724,1,1,1
+2026-04-01-165023Z-ur5e_single_4-6fc8793865df,pick up orange cup and put orange cup in the blue trash can,oct14_pretrain_80000,eval_17724,1,1,1
+2026-04-01-172539Z-ur5e_single_4-60d82ec13a75,pick up blue bowl and put blue bowl in the blue trash can,oct14_pretrain_80000,eval_17724,1,1,1
+2026-04-01-173505Z-ur5e_single_4-82ddc29d6b8e,pick up white bowl and put white bowl in the blue trash can,oct14_pretrain_80000,eval_17724,1,1,1
+2026-04-01-180352Z-ur5e_single_4-45af8b839adb,pick up orange plate and put orange plate in the blue trash can,oct14_pretrain_80000,eval_17724,1,1,0
+2026-04-01-182245Z-ur5e_single_4-395a1f5e2e0a,pick up chopstick and put chopstick in the blue trash can,oct14_pretrain_80000,eval_17724,1,1,0
+2026-04-01-184611Z-ur5e_single_4-56146bc09eec,pick up spoon and put spoon in the blue trash can,oct14_pretrain_80000,eval_17724,1,0,0
+2026-04-01-194822Z-ur5e_single_4-230fd0c03966,pick up chip bag and put chip bag in the clear bussing bin to the left,oct14_pretrain_80000,eval_17724,1,1,0
+2026-04-01-200638Z-ur5e_single_4-d749d370eb6b,pick up plastic lid and put plastic lid in the clear bussing bin to the left,oct14_pretrain_80000,eval_17724,0,0,0
+2026-04-01-201847Z-ur5e_single_4-f91b066eeb49,pick up plastic container and put plastic container in the clear bussing bin to the left,oct14_pretrain_80000,eval_17724,1,1,0
+2026-04-01-203428Z-ur5e_single_4-4c0b69b0213c,pick up foil tray and put foil tray in the clear bussing bin to the left,oct14_pretrain_80000,eval_17724,1,0,0
+2026-04-01-204936Z-ur5e_single_4-2f1aa8e29d1f,pick up bottle and put bottle in the clear bussing bin to the left,oct14_pretrain_80000,eval_17724,1,1,1
+,,,,,,
+2026-04-01-055652Z-ur5e_single_4-998db461a587,pick up yellow cup and put yellow cup in the blue trash can,v10_span_buckets_oct14_pretrain_12_22_80000,eval_17724,1,1,0
+2026-04-01-060658Z-ur5e_single_4-3ee470f182c4,pick up orange cup and put orange cup in the blue trash can,v10_span_buckets_oct14_pretrain_12_22_80001,eval_17724,0,0,0
+2026-04-01-061338Z-ur5e_single_4-feee0c2c9547,pick up blue bowl and put blue bowl in the blue trash can,v10_span_buckets_oct14_pretrain_12_22_80002,eval_17724,1,1,0
+2026-04-01-061937Z-ur5e_single_4-83cb71ad3a1f,pick up white bowl and put white bowl in the blue trash can,v10_span_buckets_oct14_pretrain_12_22_80003,eval_17724,0,0,0
+2026-04-01-063425Z-ur5e_single_4-477ebe4176df,pick up orange plate and put orange plate in the blue trash can,v10_span_buckets_oct14_pretrain_12_22_80004,eval_17724,0,0,0
+2026-04-01-064349Z-ur5e_single_4-173b54f4d608,pick up chopstick and put chopstick in the blue trash can,v10_span_buckets_oct14_pretrain_12_22_80005,eval_17724,0,0,0
+2026-04-01-073719Z-ur5e_single_4-9dae9f3ca01f,pick up spoon and put spoon in the blue trash can,v10_span_buckets_oct14_pretrain_12_22_80006,eval_17724,0,0,0
+2026-04-01-075437Z-ur5e_single_4-6372610936c9,pick up chip bag and put chip bag in the clear bussing bin to the left,v10_span_buckets_oct14_pretrain_12_22_80007,eval_17724,0,0,0
+2026-04-01-081006Z-ur5e_single_4-1256de554e50,pick up plastic lid and put plastic lid in the clear bussing bin to the left,v10_span_buckets_oct14_pretrain_12_22_80008,eval_17724,0,0,0
+2026-04-01-082601Z-ur5e_single_4-9bdc1dbec604,pick up plastic container and put plastic container in the clear bussing bin to the left,v10_span_buckets_oct14_pretrain_12_22_80009,eval_17724,0,0,0
+2026-04-01-084447Z-ur5e_single_4-6c5c4282b401,pick up foil tray and put foil tray in the clear bussing bin to the left,v10_span_buckets_oct14_pretrain_12_22_80010,eval_17724,1,0,0
+2026-04-01-090102Z-ur5e_single_4-a129b378a3c7,pick up bottle and put bottle in the clear bussing bin to the left,v10_span_buckets_oct14_pretrain_12_22_80011,eval_17724,0,0,0
+2026-04-01-092951Z-ur5e_single_4-41c31505ba59,pick up yellow cup and put yellow cup in the blue trash can,v10_span_buckets_oct14_pretrain_12_22_80012,eval_17724,0,0,0
+2026-04-01-095428Z-ur5e_single_4-4d17d21d3d28,pick up orange cup and put orange cup in the blue trash can,v10_span_buckets_oct14_pretrain_12_22_80013,eval_17724,1,1,0
+2026-04-01-102619Z-ur5e_single_4-58413832a1eb,pick up blue bowl and put blue bowl in the blue trash can,v10_span_buckets_oct14_pretrain_12_22_80014,eval_17724,0,0,0
+2026-04-01-104410Z-ur5e_single_4-bcc8abd79c37,pick up white bowl and put white bowl in the blue trash can,v10_span_buckets_oct14_pretrain_12_22_80015,eval_17724,0,0,0
+2026-04-01-123143Z-ur5e_single_4-2c1245aff162,pick up chopstick and put chopstick in the blue trash can,v10_span_buckets_oct14_pretrain_12_22_80016,eval_17724,0,0,0
+2026-04-01-123919Z-ur5e_single_4-896e333e5943,pick up spoon and put spoon in the blue trash can,v10_span_buckets_oct14_pretrain_12_22_80017,eval_17724,0,0,0
+2026-04-01-125211Z-ur5e_single_4-0ee7577f7cb1,pick up chip bag and put chip bag in the clear bussing bin to the left,v10_span_buckets_oct14_pretrain_12_22_80018,eval_17724,0,0,0
+2026-04-01-125923Z-ur5e_single_4-61c42aabcc63,pick up plastic lid and put plastic lid in the clear bussing bin to the left,v10_span_buckets_oct14_pretrain_12_22_80019,eval_17724,0,0,0
+2026-04-01-131852Z-ur5e_single_4-5bd5c40837b2,pick up plastic container and put plastic container in the clear bussing bin to the left,v10_span_buckets_oct14_pretrain_12_22_80020,eval_17724,0,0,0
+2026-04-01-132546Z-ur5e_single_4-910145673751,pick up foil tray and put foil tray in the clear bussing bin to the left,v10_span_buckets_oct14_pretrain_12_22_80021,eval_17724,0,0,0
+2026-04-01-162831Z-ur5e_single_4-0e963c093c6a,pick up bottle and put bottle in the clear bussing bin to the left,v10_span_buckets_oct14_pretrain_12_22_80022,eval_17724,0,0,0
+2026-04-01-164108Z-ur5e_single_4-28aadb61202b,pick up yellow cup and put yellow cup in the blue trash can,v10_span_buckets_oct14_pretrain_12_22_80023,eval_17724,1,1,0
+2026-04-01-165423Z-ur5e_single_4-0053e71d6b75,pick up orange cup and put orange cup in the blue trash can,v10_span_buckets_oct14_pretrain_12_22_80024,eval_17724,,,
+2026-04-01-172758Z-ur5e_single_4-ad562aa18358,pick up blue bowl and put blue bowl in the blue trash can,v10_span_buckets_oct14_pretrain_12_22_80025,eval_17724,1,1,0
+2026-04-01-173818Z-ur5e_single_4-22d2d33d7fed,pick up white bowl and put white bowl in the blue trash can,v10_span_buckets_oct14_pretrain_12_22_80026,eval_17724,1,1,0
+2026-04-01-180939Z-ur5e_single_4-21a617838517,pick up orange plate and put orange plate in the blue trash can,v10_span_buckets_oct14_pretrain_12_22_80027,eval_17724,1,0,0
+2026-04-01-182632Z-ur5e_single_4-0e67750e5e4b,pick up chopstick and put chopstick in the blue trash can,v10_span_buckets_oct14_pretrain_12_22_80028,eval_17724,0,0,0
+2026-04-01-185201Z-ur5e_single_4-63d5fbf5fc09,pick up spoon and put spoon in the blue trash can,v10_span_buckets_oct14_pretrain_12_22_80029,eval_17724,0,0,0
+2026-04-01-194902Z-ur5e_single_4-b1f3d6009050,pick up chip bag and put chip bag in the clear bussing bin to the left,v10_span_buckets_oct14_pretrain_12_22_80030,eval_17724,0,0,0
+2026-04-01-201221Z-ur5e_single_4-66fa7c5f6ba0,pick up plastic lid and put plastic lid in the clear bussing bin to the left,v10_span_buckets_oct14_pretrain_12_22_80031,eval_17724,0,0,0
+2026-04-01-202001Z-ur5e_single_4-5fe7e8d1188e,pick up plastic container and put plastic container in the clear bussing bin to the left,v10_span_buckets_oct14_pretrain_12_22_80032,eval_17724,1,0,0
+2026-04-01-203657Z-ur5e_single_4-dc6e0bc4809e,pick up foil tray and put foil tray in the clear bussing bin to the left,v10_span_buckets_oct14_pretrain_12_22_80033,eval_17724,0,0,0
+2026-04-01-205623Z-ur5e_single_4-897038ce72e0,pick up bottle and put bottle in the clear bussing bin to the left,v10_span_buckets_oct14_pretrain_12_22_80034,eval_17724,0,0,0
+,,,,,,
+2026-04-01-210849Z-ur5e_single_4-b1acb815e769,pick up yellow cup and put it in bin,full_large_run_5_100000_rtb,eval_17725,1,0,0
+2026-04-01-212328Z-ur5e_single_4-d202417b1ab5,pick up orange cup and put it in bin,full_large_run_5_100000_rtb,eval_17725,0,0,0
+2026-04-01-215458Z-ur5e_single_4-87e571c9be41,pick up blue bowl and put it in bin,full_large_run_5_100000_rtb,eval_17725,1,0,0
+2026-04-01-221347Z-ur5e_single_4-b61c16361710,pick up white bowl and put it in bin,full_large_run_5_100000_rtb,eval_17725,1,0,0
+2026-04-02-002826Z-ur5e_single_4-817b9baa2316,pick up orange plate and put it in bin,full_large_run_5_100000_rtb,eval_17725,0,0,0
+2026-04-02-005750Z-ur5e_single_4-3839a9e7195b,pick up chopstick and put it in bin,full_large_run_5_100000_rtb,eval_17725,1,0,0
+2026-04-02-012625Z-ur5e_single_4-f18bab613a6e,pick up spoon and put it in bin,full_large_run_5_100000_rtb,eval_17725,0,0,0
+2026-04-02-014819Z-ur5e_single_4-cb68966f52d1,pick up chip bag and throw it away,full_large_run_5_100000_rtb,eval_17725,1,0,0
+2026-04-02-023051Z-ur5e_single_4-4ff36ac3845d,pick up plastic lid and throw it away,full_large_run_5_100000_rtb,eval_17725,0,0,0
+2026-04-02-033930Z-ur5e_single_4-445701b67f6c,pick up plastic container and throw it away,full_large_run_5_100000_rtb,eval_17725,0,0,0
+2026-04-02-035339Z-ur5e_single_4-b1aea2d3eadb,pick up foil tray and throw it away,full_large_run_5_100000_rtb,eval_17725,0,0,0
+2026-04-02-040846Z-ur5e_single_4-a8a1f52e262a,pick up bottle and throw it away,full_large_run_5_100000_rtb,eval_17725,1,0,0
+2026-04-02-042052Z-ur5e_single_4-eac1a662ad31,pick up yellow cup and put it in bin,full_large_run_5_100000_rtb,eval_17725,0,0,0
+2026-04-02-043028Z-ur5e_single_4-873fdef3b0aa,pick up orange cup and put it in bin,full_large_run_5_100000_rtb,eval_17725,1,0,0
+2026-04-02-043949Z-ur5e_single_4-a51e0be7bc11,pick up blue bowl and put it in bin,full_large_run_5_100000_rtb,eval_17725,0,0,0
+2026-04-02-045608Z-ur5e_single_4-59ac423d1270,pick up white bowl and put it in bin,full_large_run_5_100000_rtb,eval_17725,1,0,0
+2026-04-02-050933Z-ur5e_single_4-8d81a167867f,pick up orange plate and put it in bin,full_large_run_5_100000_rtb,eval_17725,0,0,0
+2026-04-02-054519Z-ur5e_single_4-3cde735d2349,pick up chopstick and put it in bin,full_large_run_5_100000_rtb,eval_17725,0,0,0
+2026-04-02-055747Z-ur5e_single_4-ee73d5d1428e,pick up spoon and put it in bin,full_large_run_5_100000_rtb,eval_17725,1,0,0
+2026-04-02-061354Z-ur5e_single_4-ac49d5be2aa7,pick up chip bag and throw it away,full_large_run_5_100000_rtb,eval_17725,1,0,0
+2026-04-02-062823Z-ur5e_single_4-1339f714c527,pick up plastic lid and throw it away,full_large_run_5_100000_rtb,eval_17725,1,0,0
+2026-04-02-072501Z-ur5e_single_4-d4ef4a95281b,pick up foil tray and throw it away,full_large_run_5_100000_rtb,eval_17725,1,1,0
+2026-04-02-075731Z-ur5e_single_4-305d08b4f32d,pick up bottle and throw it away,full_large_run_5_100000_rtb,eval_17725,1,0,0
+2026-04-02-081203Z-ur5e_single_4-9eda5a6a2cf3,pick up yellow cup and put it in bin,full_large_run_5_100000_rtb,eval_17725,0,0,0
+2026-04-02-082426Z-ur5e_single_4-995efdf06a24,pick up orange cup and put it in bin,full_large_run_5_100000_rtb,eval_17725,0,0,0
+2026-04-02-084320Z-ur5e_single_4-14333c506f97,pick up blue bowl and put it in bin,full_large_run_5_100000_rtb,eval_17725,0,0,0
+2026-04-02-092635Z-ur5e_single_4-f01689650d4c,pick up white bowl and put it in bin,full_large_run_5_100000_rtb,eval_17725,1,0,0
+2026-04-02-152050Z-ur5e_single_4-e2e1b8eb918a,pick up orange plate and put it in bin,full_large_run_5_100000_rtb,eval_17725,1,0,0
+2026-04-02-154145Z-ur5e_single_4-baae79b9e4de,pick up chopstick and put it in bin,full_large_run_5_100000_rtb,eval_17725,1,1,0
+2026-04-02-155745Z-ur5e_single_4-69faf0179720,pick up spoon and put it in bin,full_large_run_5_100000_rtb,eval_17725,1,0,0
+2026-04-02-160529Z-ur5e_single_4-08c100b2b0b8,pick up chip bag and throw it away,full_large_run_5_100000_rtb,eval_17725,1,0,0
+2026-04-02-161302Z-ur5e_single_4-f141d2a07ef3,pick up plastic lid and throw it away,full_large_run_5_100000_rtb,eval_17725,1,0,0
+2026-04-02-162036Z-ur5e_single_4-33dd3f175474,pick up plastic container and throw it away,full_large_run_5_100000_rtb,eval_17725,1,1,1
+2026-04-02-162712Z-ur5e_single_4-cbbb7d7452cd,pick up foil tray and throw it away,full_large_run_5_100000_rtb,eval_17725,1,1,1
+2026-04-02-164437Z-ur5e_single_4-10b5b2fc4e22,pick up bottle and throw it away,full_large_run_5_100000_rtb,eval_17725,1,0,0
+,,,,,,
+2026-04-01-211250Z-ur5e_single_4-c4e174b2581c,pick up yellow cup and put it in bin,episode_buckets_120000,eval_17725,1,1,1
+2026-04-01-214907Z-ur5e_single_4-3845eba4bf36,pick up orange cup and put it in bin,episode_buckets_120000,eval_17725,1,1,1
+2026-04-01-220016Z-ur5e_single_4-0b186f4ed889,pick up blue bowl and put it in bin,episode_buckets_120000,eval_17725,1,0,0
+2026-04-01-224333Z-ur5e_single_4-0a8e32b349d5,pick up white bowl and put it in bin,episode_buckets_120000,eval_17725,1,1,0
+2026-04-02-003658Z-ur5e_single_4-720962676b09,pick up orange plate and put it in bin,episode_buckets_120000,eval_17725,1,1,0
+2026-04-02-011438Z-ur5e_single_4-f8879dd0a4f8,pick up chopstick and put it in bin,episode_buckets_120000,eval_17725,1,1,0
+2026-04-02-013001Z-ur5e_single_4-56d5533250e3,pick up spoon and put it in bin,episode_buckets_120000,eval_17725,0,0,0
+2026-04-02-015850Z-ur5e_single_4-a63c32b83b04,pick up chip bag and throw it away,episode_buckets_120000,eval_17725,1,0,0
+2026-04-02-024254Z-ur5e_single_4-e5164863c55b,pick up plastic lid and throw it away,episode_buckets_120000,eval_17725,0,0,0
+2026-04-02-034507Z-ur5e_single_4-aaec0ad4ee97,pick up plastic container and throw it away,episode_buckets_120000,eval_17725,1,1,1
+2026-04-02-035844Z-ur5e_single_4-1af955655c06,pick up foil tray and throw it away,episode_buckets_120000,eval_17725,1,0,0
+2026-04-02-041055Z-ur5e_single_4-c029df479872,pick up bottle and throw it away,episode_buckets_120000,eval_17725,0,0,0
+2026-04-02-042419Z-ur5e_single_4-b31ce0abf76a,pick up yellow cup and put it in bin,episode_buckets_120000,eval_17725,1,1,1
+2026-04-02-043254Z-ur5e_single_4-cd8c44b5abc6,pick up orange cup and put it in bin,episode_buckets_120000,eval_17725,1,1,1
+2026-04-02-044445Z-ur5e_single_4-cc9f14133d3b,pick up blue bowl and put it in bin,episode_buckets_120000,eval_17725,1,1,1
+2026-04-02-045925Z-ur5e_single_4-4b1b0d787fb6,pick up white bowl and put it in bin,episode_buckets_120000,eval_17725,0,0,0
+2026-04-02-051705Z-ur5e_single_4-72aab07a77d9,pick up orange plate and put it in bin,episode_buckets_120000,eval_17725,0,0,0
+2026-04-02-054738Z-ur5e_single_4-d21b5a0cfffd,pick up chopstick and put it in bin,episode_buckets_120000,eval_17725,1,0,0
+2026-04-02-060108Z-ur5e_single_4-4186fde1bca7,pick up spoon and put it in bin,episode_buckets_120000,eval_17725,0,0,0
+2026-04-02-062029Z-ur5e_single_4-08f3efa294d0,pick up chip bag and throw it away,episode_buckets_120000,eval_17725,1,0,0
+2026-04-02-063438Z-ur5e_single_4-40770a6a25d7,pick up plastic lid and throw it away,episode_buckets_120000,eval_17725,0,0,0
+2026-04-02-064936Z-ur5e_single_4-31d6fe0fd88e,pick up plastic container and throw it away,episode_buckets_120000,eval_17725,1,1,1
+2026-04-02-072837Z-ur5e_single_4-fb9b80cadb98,pick up foil tray and throw it away,episode_buckets_120000,eval_17725,1,0,0
+2026-04-02-075954Z-ur5e_single_4-5922edf8bc5a,pick up bottle and throw it away,episode_buckets_120000,eval_17725,1,0,0
+2026-04-02-081552Z-ur5e_single_4-5b2d7f46650b,pick up yellow cup and put it in bin,episode_buckets_120000,eval_17725,0,0,0
+2026-04-02-083137Z-ur5e_single_4-d5131af68aed,pick up orange cup and put it in bin,episode_buckets_120000,eval_17725,1,1,0
+2026-04-02-084739Z-ur5e_single_4-5168577acfce,pick up blue bowl and put it in bin,episode_buckets_120000,eval_17725,0,0,0
+2026-04-02-093459Z-ur5e_single_4-0a5c9f2ebec2,pick up white bowl and put it in bin,episode_buckets_120000,eval_17725,0,0,0
+2026-04-02-152614Z-ur5e_single_4-75db5bd02799,pick up orange plate and put it in bin,episode_buckets_120000,eval_17725,1,0,0
+2026-04-02-154442Z-ur5e_single_4-a2bbc7614f9d,pick up chopstick and put it in bin,episode_buckets_120000,eval_17725,1,1,1
+2026-04-02-155943Z-ur5e_single_4-a03c5dc5a8aa,pick up spoon and put it in bin,episode_buckets_120000,eval_17725,1,0,0
+2026-04-02-160836Z-ur5e_single_4-8f476ebc4eca,pick up chip bag and throw it away,episode_buckets_120000,eval_17725,1,1,0
+2026-04-02-161529Z-ur5e_single_4-aab774be4218,pick up plastic lid and throw it away,episode_buckets_120000,eval_17725,1,1,0
+2026-04-02-162309Z-ur5e_single_4-e6bab6d05917,pick up plastic container and throw it away,episode_buckets_120000,eval_17725,1,1,1
+2026-04-02-163146Z-ur5e_single_4-5db83c6a7678,pick up foil tray and throw it away,episode_buckets_120000,eval_17725,1,0,0
+2026-04-02-164632Z-ur5e_single_4-f528b7d80a5f,pick up bottle and throw it away,episode_buckets_120000,eval_17725,1,1,1
+,,,,,,
+2026-04-01-211817Z-ur5e_single_4-6c4f6a20ae47,pick up yellow cup and put it in bin,oct14_pretrain_rerun_80000,eval_17725,1,1,0
+2026-04-01-215144Z-ur5e_single_4-112c910ee45e,pick up orange cup and put it in bin,oct14_pretrain_rerun_80000,eval_17725,1,1,1
+2026-04-01-220321Z-ur5e_single_4-f83fc03aa799,pick up blue bowl and put it in bin,oct14_pretrain_rerun_80000,eval_17725,1,1,0
+2026-04-01-224830Z-ur5e_single_4-14a0c2a8154d,pick up white bowl and put it in bin,oct14_pretrain_rerun_80000,eval_17725,1,1,0
+2026-04-02-004758Z-ur5e_single_4-b69a6df7d936,pick up orange plate and put it in bin,oct14_pretrain_rerun_80000,eval_17725,1,0,0
+2026-04-02-011751Z-ur5e_single_4-6cb2d17fc623,pick up chopstick and put it in bin,oct14_pretrain_rerun_80000,eval_17725,1,1,0
+2026-04-02-013750Z-ur5e_single_4-d2d1128ee997,pick up spoon and put it in bin,oct14_pretrain_rerun_80000,eval_17725,1,0,0
+2026-04-02-020120Z-ur5e_single_4-962dedd46c47,pick up chip bag and throw it away,oct14_pretrain_rerun_80000,eval_17725,1,1,1
+2026-04-02-025757Z-ur5e_single_4-2070744801f5,pick up plastic lid and throw it away,oct14_pretrain_rerun_80000,eval_17725,1,1,0
+2026-04-02-034801Z-ur5e_single_4-7fe1515b9207,pick up plastic container and throw it away,oct14_pretrain_rerun_80000,eval_17725,1,1,1
+2026-04-02-040138Z-ur5e_single_4-fee57730c60c,pick up foil tray and throw it away,oct14_pretrain_rerun_80000,eval_17725,1,1,0
+2026-04-02-041341Z-ur5e_single_4-a462d964aae9,pick up bottle and throw it away,oct14_pretrain_rerun_80000,eval_17725,1,1,1
+2026-04-02-042612Z-ur5e_single_4-efa054c92ccd,pick up yellow cup and put it in bin,oct14_pretrain_rerun_80000,eval_17725,1,1,1
+2026-04-02-043443Z-ur5e_single_4-59bfd10d23d8,pick up orange cup and put it in bin,oct14_pretrain_rerun_80000,eval_17725,1,1,0
+2026-04-02-044641Z-ur5e_single_4-9dee83e39c25,pick up blue bowl and put it in bin,oct14_pretrain_rerun_80000,eval_17725,1,1,0
+2026-04-02-050156Z-ur5e_single_4-9719fc76b78e,pick up white bowl and put it in bin,oct14_pretrain_rerun_80000,eval_17725,1,1,1
+2026-04-02-052126Z-ur5e_single_4-292ebe61072d,pick up orange plate and put it in bin,oct14_pretrain_rerun_80000,eval_17725,1,1,0
+2026-04-02-055156Z-ur5e_single_4-4810fdffa0fd,pick up chopstick and put it in bin,oct14_pretrain_rerun_80000,eval_17725,1,1,0
+2026-04-02-060550Z-ur5e_single_4-b1be24047dbb,pick up spoon and put it in bin,oct14_pretrain_rerun_80000,eval_17725,0,0,0
+2026-04-02-062357Z-ur5e_single_4-36e1efca40cf,pick up chip bag and throw it away,oct14_pretrain_rerun_80000,eval_17725,1,1,1
+2026-04-02-063929Z-ur5e_single_4-443eb06a716f,pick up plastic lid and throw it away,oct14_pretrain_rerun_80000,eval_17725,0,0,0
+2026-04-02-065210Z-ur5e_single_4-f32ba8db1e12,pick up plastic container and throw it away,oct14_pretrain_rerun_80000,eval_17725,1,0,0
+2026-04-02-073643Z-ur5e_single_4-c0ec400dba03,pick up foil tray and throw it away,oct14_pretrain_rerun_80000,eval_17725,1,1,0
+2026-04-02-080456Z-ur5e_single_4-282ea72852ff,pick up bottle and throw it away,oct14_pretrain_rerun_80000,eval_17725,1,0,0
+2026-04-02-081813Z-ur5e_single_4-a08268e24567,pick up yellow cup and put it in bin,oct14_pretrain_rerun_80000,eval_17725,1,1,1
+2026-04-02-083614Z-ur5e_single_4-b2a586ad85d0,pick up orange cup and put it in bin,oct14_pretrain_rerun_80000,eval_17725,1,1,1
+2026-04-02-085133Z-ur5e_single_4-9810c53cad8b,pick up blue bowl and put it in bin,oct14_pretrain_rerun_80000,eval_17725,0,0,0
+2026-04-02-093958Z-ur5e_single_4-b5235cada4f0,pick up white bowl and put it in bin,oct14_pretrain_rerun_80000,eval_17725,1,1,1
+2026-04-02-153154Z-ur5e_single_4-4ed71f68c07e,pick up orange plate and put it in bin,oct14_pretrain_rerun_80000,eval_17725,1,0,0
+2026-04-02-154707Z-ur5e_single_4-c81a7b485c7a,pick up chopstick and put it in bin,oct14_pretrain_rerun_80000,eval_17725,1,1,1
+2026-04-02-160202Z-ur5e_single_4-624f69940e28,pick up spoon and put it in bin,oct14_pretrain_rerun_80000,eval_17725,1,1,1
+2026-04-02-161000Z-ur5e_single_4-31f44cdbd31c,pick up chip bag and throw it away,oct14_pretrain_rerun_80000,eval_17725,1,1,1
+2026-04-02-161656Z-ur5e_single_4-8df8c2311dbc,pick up plastic lid and throw it away,oct14_pretrain_rerun_80000,eval_17725,1,1,0
+2026-04-02-162333Z-ur5e_single_4-348e0c7df6e6,pick up plastic container and throw it away,oct14_pretrain_rerun_80000,eval_17725,1,1,1
+2026-04-02-163321Z-ur5e_single_4-1f5747544615,pick up foil tray and throw it away,oct14_pretrain_rerun_80000,eval_17725,1,1,1
+2026-04-02-164803Z-ur5e_single_4-d593b47b0e88,pick up bottle and throw it away,oct14_pretrain_rerun_80000,eval_17725,1,1,1

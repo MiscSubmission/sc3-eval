@@ -8,7 +8,7 @@
       content="Project page for SC3-Eval: Evaluating Robot Foundation Models via Self-Consistent Video Generation."
     >
     <title>SC3-Eval | Project Page</title>
-    <link rel="stylesheet" href="styles.css?v=20260924-yam-ann">
+    <link rel="stylesheet" href="styles.css?v=20260924-ur5-fn">
   </head>
   <body>
     <header class="site-hero">
@@ -51,7 +51,7 @@
       </section>
 
       <section class="container section" id="rollout-demo" aria-labelledby="rollout-demo-title">
-        <h2 id="rollout-demo-title">Interactive Rollouts</h2>
+        <h2 id="rollout-demo-title">Interactive Rollouts Visualization</h2>
         <p>
           Select an embodiment and task to compare a real-world rollout with
           the corresponding world-model rollout.
@@ -61,8 +61,8 @@
             <legend>Embodiment</legend>
             <div class="demo-pills" role="radiogroup" aria-label="Embodiment">
               <label>
-                <input type="radio" name="embodiment" value="UR5" disabled>
-                <span>UR5 (coming soon)</span>
+                <input type="radio" name="embodiment" value="UR5">
+                <span>UR5</span>
               </label>
               <label>
                 <input type="radio" name="embodiment" value="YAM" checked>
@@ -383,14 +383,6 @@
           embodiment: "UR5",
           task: "Pick up blue bowl and put blue bowl in the blue trash can",
           policy: "Oct14 pretrain (80k)",
-          real: "assets/demo/ur5_new/2026-04-01-102232Z-ur5e_single_4-6b910e13d24b__eval_17724__apr8_oct14_pretrain_80000__pick_up_blue_bowl_and_put_blue_bowl_in_the_blue_trash_can_real_world.mp4",
-          world: "assets/demo/ur5_new/2026-04-01-102232Z-ur5e_single_4-6b910e13d24b__eval_17724__apr8_oct14_pretrain_80000__pick_up_blue_bowl_and_put_blue_bowl_in_the_blue_trash_can_o.mp4",
-          rollout: "2"
-        },
-        {
-          embodiment: "UR5",
-          task: "Pick up blue bowl and put blue bowl in the blue trash can",
-          policy: "Oct14 pretrain (80k)",
           real: "assets/demo/ur5_new/2026-04-01-172539Z-ur5e_single_4-60d82ec13a75__eval_17724__apr8_oct14_pretrain_80000__pick_up_blue_bowl_and_put_blue_bowl_in_the_blue_trash_can_real_world.mp4",
           world: "assets/demo/ur5_new/2026-04-01-172539Z-ur5e_single_4-60d82ec13a75__eval_17724__apr8_oct14_pretrain_80000__pick_up_blue_bowl_and_put_blue_bowl_in_the_blue_trash_can_o.mp4",
           rollout: "3"
@@ -421,13 +413,6 @@
         {
           embodiment: "UR5",
           task: "Pick up chopstick and put chopstick in the blue trash can",
-          policy: "Full large run (100k)",
-          real: "assets/demo/ur5_new/2026-04-01-064058Z-ur5e_single_4-01079a0555b2__eval_17724__apr8_full_large_run_5_100000__pick_up_chopstick_and_put_chopstick_in_the_blue_trash_can_real_world.mp4",
-          world: "assets/demo/ur5_new/2026-04-01-064058Z-ur5e_single_4-01079a0555b2__eval_17724__apr8_full_large_run_5_100000__pick_up_chopstick_and_put_chopstick_in_the_blue_trash_can_o.mp4"
-        },
-        {
-          embodiment: "UR5",
-          task: "Pick up chopstick and put chopstick in the blue trash can",
           policy: "Span buckets Oct14 (80k)",
           real: "assets/demo/ur5_new/2026-04-01-064349Z-ur5e_single_4-173b54f4d608__eval_17724__apr8_v10_span_buckets_oct14_pretrain_12_22_80000__pick_up_chopstick_and_put_chopstick_in_the_blue_trash_can_real_world.mp4",
           world: "assets/demo/ur5_new/2026-04-01-064349Z-ur5e_single_4-173b54f4d608__eval_17724__apr8_v10_span_buckets_oct14_pretrain_12_22_80000__pick_up_chopstick_and_put_chopstick_in_the_blue_trash_can_o.mp4",
@@ -452,14 +437,6 @@
           embodiment: "UR5",
           task: "Pick up chip bag and put chip bag in the clear bussing bin to the left",
           policy: "Full large run (100k)",
-          real: "assets/demo/ur5_new/2026-04-01-075000Z-ur5e_single_4-de65ffe5a31b__eval_17724__apr8_full_large_run_5_100000__pick_up_chip_bag_and_put_chip_bag_in_the_clear_bussing_bin_to_the_left_real_world.mp4",
-          world: "assets/demo/ur5_new/2026-04-01-075000Z-ur5e_single_4-de65ffe5a31b__eval_17724__apr8_full_large_run_5_100000__pick_up_chip_bag_and_put_chip_bag_in_the_clear_bussing_bin_to_the_left_o.mp4",
-          rollout: "1"
-        },
-        {
-          embodiment: "UR5",
-          task: "Pick up chip bag and put chip bag in the clear bussing bin to the left",
-          policy: "Full large run (100k)",
           real: "assets/demo/ur5_new/2026-04-01-124559Z-ur5e_single_4-08a011c2bcab__eval_17724__apr8_full_large_run_5_100000__pick_up_chip_bag_and_put_chip_bag_in_the_clear_bussing_bin_to_the_left_real_world.mp4",
           world: "assets/demo/ur5_new/2026-04-01-124559Z-ur5e_single_4-08a011c2bcab__eval_17724__apr8_full_large_run_5_100000__pick_up_chip_bag_and_put_chip_bag_in_the_clear_bussing_bin_to_the_left_o.mp4",
           rollout: "2"
@@ -470,13 +447,6 @@
           policy: "Jun23 pretrain (80k)",
           real: "assets/demo/ur5_new/2026-04-01-075817Z-ur5e_single_4-05911986fcd1__eval_17724__apr8_jun23_pretrain_80000__pick_up_plastic_lid_and_put_plastic_lid_in_the_clear_bussing_bin_to_the_left_real_world.mp4",
           world: "assets/demo/ur5_new/2026-04-01-075817Z-ur5e_single_4-05911986fcd1__eval_17724__apr8_jun23_pretrain_80000__pick_up_plastic_lid_and_put_plastic_lid_in_the_clear_bussing_bin_to_the_left_o.mp4"
-        },
-        {
-          embodiment: "UR5",
-          task: "Pick up bottle and put bottle in the clear bussing bin to the left",
-          policy: "Oct14 pretrain (80k)",
-          real: "assets/demo/ur5_new/2026-04-01-085648Z-ur5e_single_4-7308c0164e9b__eval_17724__apr8_oct14_pretrain_80000__pick_up_bottle_and_put_bottle_in_the_clear_bussing_bin_to_the_left_real_world.mp4",
-          world: "assets/demo/ur5_new/2026-04-01-085648Z-ur5e_single_4-7308c0164e9b__eval_17724__apr8_oct14_pretrain_80000__pick_up_bottle_and_put_bottle_in_the_clear_bussing_bin_to_the_left_o.mp4"
         },
         {
           embodiment: "UR5",
@@ -598,13 +568,6 @@
         },
         {
           embodiment: "UR5",
-          task: "Pick up plastic container and put plastic container in the clear bussing bin to",
-          policy: "Jun23 pretrain (80k)",
-          real: "assets/demo/ur5_new/2026-04-01-201408Z-ur5e_single_4-c116e8171d6f__eval_17724__apr8_jun23_pretrain_80000__pick_up_plastic_container_and_put_plastic_container_in_the_clear_bussing_bin_to_real_world.mp4",
-          world: "assets/demo/ur5_new/2026-04-01-201408Z-ur5e_single_4-c116e8171d6f__eval_17724__apr8_jun23_pretrain_80000__pick_up_plastic_container_and_put_plastic_container_in_the_clear_bussing_bin_to_o.mp4"
-        },
-        {
-          embodiment: "UR5",
           task: "Pick up foil tray and put foil tray in the clear bussing bin to the left",
           policy: "Jun23 pretrain (80k)",
           real: "assets/demo/ur5_new/2026-04-01-202435Z-ur5e_single_4-c9d24b3bbd05__eval_17724__apr8_jun23_pretrain_80000__pick_up_foil_tray_and_put_foil_tray_in_the_clear_bussing_bin_to_the_left_real_world.mp4",
@@ -680,26 +643,11 @@
         },
         {
           embodiment: "UR5",
-          task: "Pick up spoon and put it in bin",
-          policy: "Oct14 pretrain rerun (80k)",
-          real: "assets/demo/ur5_new/2026-04-02-013750Z-ur5e_single_4-d2d1128ee997__eval_17725__apr8_oct14_pretrain_rerun_80000__pick_up_spoon_and_put_it_in_bin_real_world.mp4",
-          world: "assets/demo/ur5_new/2026-04-02-013750Z-ur5e_single_4-d2d1128ee997__eval_17725__apr8_oct14_pretrain_rerun_80000__pick_up_spoon_and_put_it_in_bin_o.mp4"
-        },
-        {
-          embodiment: "UR5",
           task: "Pick up plastic lid and throw it away",
           policy: "Full large run RTB (100k)",
           real: "assets/demo/ur5_new/2026-04-02-023051Z-ur5e_single_4-4ff36ac3845d__eval_17725__apr8_full_large_run_5_100000_rtb__pick_up_plastic_lid_and_throw_it_away_real_world.mp4",
           world: "assets/demo/ur5_new/2026-04-02-023051Z-ur5e_single_4-4ff36ac3845d__eval_17725__apr8_full_large_run_5_100000_rtb__pick_up_plastic_lid_and_throw_it_away_o.mp4",
           rollout: "1"
-        },
-        {
-          embodiment: "UR5",
-          task: "Pick up plastic lid and throw it away",
-          policy: "Full large run RTB (100k)",
-          real: "assets/demo/ur5_new/2026-04-02-062823Z-ur5e_single_4-1339f714c527__eval_17725__apr8_full_large_run_5_100000_rtb__pick_up_plastic_lid_and_throw_it_away_real_world.mp4",
-          world: "assets/demo/ur5_new/2026-04-02-062823Z-ur5e_single_4-1339f714c527__eval_17725__apr8_full_large_run_5_100000_rtb__pick_up_plastic_lid_and_throw_it_away_o.mp4",
-          rollout: "2"
         },
         {
           embodiment: "UR5",
@@ -755,13 +703,6 @@
         },
         {
           embodiment: "UR5",
-          task: "Pick up blue bowl and put it in bin",
-          policy: "Oct14 pretrain rerun (80k)",
-          real: "assets/demo/ur5_new/2026-04-02-044641Z-ur5e_single_4-9dee83e39c25__eval_17725__apr8_oct14_pretrain_rerun_80000__pick_up_blue_bowl_and_put_it_in_bin_real_world.mp4",
-          world: "assets/demo/ur5_new/2026-04-02-044641Z-ur5e_single_4-9dee83e39c25__eval_17725__apr8_oct14_pretrain_rerun_80000__pick_up_blue_bowl_and_put_it_in_bin_o.mp4"
-        },
-        {
-          embodiment: "UR5",
           task: "Pick up white bowl and put it in bin",
           policy: "Episode buckets (120k)",
           real: "assets/demo/ur5_new/2026-04-02-045925Z-ur5e_single_4-4b1b0d787fb6__eval_17725__apr8_episode_buckets_120000__pick_up_white_bowl_and_put_it_in_bin_real_world.mp4",
@@ -773,20 +714,6 @@
           policy: "Oct14 pretrain rerun (80k)",
           real: "assets/demo/ur5_new/2026-04-02-052126Z-ur5e_single_4-292ebe61072d__eval_17725__apr8_oct14_pretrain_rerun_80000__pick_up_orange_plate_and_put_it_in_bin_real_world.mp4",
           world: "assets/demo/ur5_new/2026-04-02-052126Z-ur5e_single_4-292ebe61072d__eval_17725__apr8_oct14_pretrain_rerun_80000__pick_up_orange_plate_and_put_it_in_bin_o.mp4"
-        },
-        {
-          embodiment: "UR5",
-          task: "Pick up spoon and put it in bin",
-          policy: "Full large run RTB (100k)",
-          real: "assets/demo/ur5_new/2026-04-02-055747Z-ur5e_single_4-ee73d5d1428e__eval_17725__apr8_full_large_run_5_100000_rtb__pick_up_spoon_and_put_it_in_bin_real_world.mp4",
-          world: "assets/demo/ur5_new/2026-04-02-055747Z-ur5e_single_4-ee73d5d1428e__eval_17725__apr8_full_large_run_5_100000_rtb__pick_up_spoon_and_put_it_in_bin_o.mp4"
-        },
-        {
-          embodiment: "UR5",
-          task: "Pick up chip bag and throw it away",
-          policy: "Full large run RTB (100k)",
-          real: "assets/demo/ur5_new/2026-04-02-061354Z-ur5e_single_4-ac49d5be2aa7__eval_17725__apr8_full_large_run_5_100000_rtb__pick_up_chip_bag_and_throw_it_away_real_world.mp4",
-          world: "assets/demo/ur5_new/2026-04-02-061354Z-ur5e_single_4-ac49d5be2aa7__eval_17725__apr8_full_large_run_5_100000_rtb__pick_up_chip_bag_and_throw_it_away_o.mp4"
         },
         {
           embodiment: "UR5",
@@ -815,13 +742,6 @@
           policy: "Episode buckets (120k)",
           real: "assets/demo/ur5_new/2026-04-02-155943Z-ur5e_single_4-a03c5dc5a8aa__eval_17725__apr8_episode_buckets_120000__pick_up_spoon_and_put_it_in_bin_real_world.mp4",
           world: "assets/demo/ur5_new/2026-04-02-155943Z-ur5e_single_4-a03c5dc5a8aa__eval_17725__apr8_episode_buckets_120000__pick_up_spoon_and_put_it_in_bin_o.mp4"
-        },
-        {
-          embodiment: "UR5",
-          task: "Pick up chip bag and throw it away",
-          policy: "Oct14 pretrain rerun (80k)",
-          real: "assets/demo/ur5_new/2026-04-02-161000Z-ur5e_single_4-31f44cdbd31c__eval_17725__apr8_oct14_pretrain_rerun_80000__pick_up_chip_bag_and_throw_it_away_real_world.mp4",
-          world: "assets/demo/ur5_new/2026-04-02-161000Z-ur5e_single_4-31f44cdbd31c__eval_17725__apr8_oct14_pretrain_rerun_80000__pick_up_chip_bag_and_throw_it_away_o.mp4"
         },
         {
           embodiment: "UR5",
@@ -898,6 +818,42 @@
         });
       }
 
+      const ur5Annotations = new Map();
+
+      function episodeIdFromPath(path) {
+        const name = (path || "").split("/").pop() || "";
+        return name.split("__")[0];
+      }
+
+      async function loadUr5Annotations() {
+        try {
+          const response = await fetch("assets/demo/ur5_new/annotation.csv");
+          if (!response.ok) return;
+          const text = await response.text();
+          text.trim().split(/\r?\n/).slice(1).forEach((line) => {
+            const cols = line.split(",");
+            const id = (cols[0] || "").trim();
+            if (!id || cols.length < 7) return;
+            const values = cols.slice(-3).map((value) => value.trim());
+            if (!values.every((value) => value === "0" || value === "1")) return;
+            ur5Annotations.set(id, {
+              languageFollowing: values[0] === "1",
+              objectPicking: values[1] === "1",
+              objectPlacing: values[2] === "1"
+            });
+          });
+        } catch (error) {
+          // Leave UR5 annotations hidden when the CSV cannot be fetched.
+        }
+      }
+
+      function ur5AnnotationRow(clip, label) {
+        const ann = ur5Annotations.get(episodeIdFromPath(clip.real))
+          || ur5Annotations.get(episodeIdFromPath(clip.world));
+        if (!ann) return "";
+        return `<div class="demo-annotations" aria-label="${label}">${annotationBadge("Language following", ann.languageFollowing)}${annotationBadge("Object picking", ann.objectPicking)}${annotationBadge("Object placing", ann.objectPlacing)}</div>`;
+      }
+
       function yamAnnotationsFromClip(clip) {
         const filename = (clip.world || "").toLowerCase();
         if (filename.includes("success")) {
@@ -927,6 +883,7 @@
         }
 
         const isYam = clip.embodiment === "YAM";
+        const isUr5 = clip.embodiment === "UR5";
         const outcomeBadge = !isYam && clip.outcome
           ? `<span class="demo-outcome is-${clip.outcome}">${clip.outcome}</span>`
           : "";
@@ -942,6 +899,7 @@
                 <source src="${clip.real}" type="video/mp4">
               </video>
               ${isYam ? yamAnnotationRow(clip, "Real-world annotations") : ""}
+              ${isUr5 ? ur5AnnotationRow(clip, "Real-world annotations") : ""}
             </figure>
             <figure class="demo-video-card">
               <div class="demo-video-label">
@@ -952,6 +910,7 @@
                 <source src="${clip.world}" type="video/mp4">
               </video>
               ${isYam ? yamAnnotationRow(clip, "World-model annotations") : ""}
+              ${isUr5 ? ur5AnnotationRow(clip, "World-model annotations") : ""}
             </figure>
           </div>
         `;
@@ -1009,7 +968,7 @@
         update(false, false);
       }
 
-      initRolloutDemo();
+      loadUr5Annotations().finally(() => initRolloutDemo());
 
       async function renderUncertaintyChart(chart) {
         try {
